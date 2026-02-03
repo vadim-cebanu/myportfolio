@@ -8,18 +8,18 @@
   background-color: var(--primary-bg);
 }
 
-// Glow effect
+// Glow effect using image
 .glow {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(150px);
-  opacity: 0.4;
   pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   &.glow-cyan {
-    width: 500px;
-    height: 500px;
-    background: var(--glow-cyan);
+    width: 600px;
+    height: 600px;
+    background-image: url('/img/52. Blue shadow 1 V2.svg');
     right: -100px;
     bottom: -100px;
   }

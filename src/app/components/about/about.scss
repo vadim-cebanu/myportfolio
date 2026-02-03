@@ -8,28 +8,28 @@
   background-color: var(--primary-bg);
 }
 
-// Glow effects
+// Glow effects using images
 .glow {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(150px);
-  opacity: 0.5;
   pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   &.glow-purple {
-    width: 400px;
-    height: 400px;
-    background: var(--glow-purple);
-    right: 20%;
-    top: 20%;
+    width: 600px;
+    height: 600px;
+    background-image: url('/img/Purple shadow 3.png');
+    right: 10%;
+    top: 10%;
   }
 
   &.glow-green {
-    width: 500px;
-    height: 500px;
-    background: var(--accent-green);
-    right: -100px;
-    bottom: -100px;
+    width: 700px;
+    height: 700px;
+    background-image: url('/img/Green shadow 2.png');
+    right: -150px;
+    bottom: -150px;
   }
 }
 
