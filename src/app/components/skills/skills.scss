@@ -1,0 +1,244 @@
+.skills {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 100px 80px;
+  overflow: hidden;
+  background-color: var(--primary-bg);
+}
+
+// Glow effect
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.4;
+  pointer-events: none;
+
+  &.glow-cyan {
+    width: 500px;
+    height: 500px;
+    background: var(--glow-cyan);
+    right: -100px;
+    bottom: -100px;
+  }
+}
+
+.skills-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+// Skills Grid
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 60px;
+  flex: 1;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+
+  .skill-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+
+    &.api-icon {
+      border: 3px solid #ffffff;
+      border-radius: 12px;
+      padding: 10px;
+
+      span {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .skill-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  &.highlight {
+    .skill-icon {
+      color: var(--glow-cyan);
+    }
+  }
+}
+
+// Right content
+.skills-content {
+  flex: 1;
+  max-width: 500px;
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+
+    .section-title {
+      font-size: 72px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .title-line {
+      flex: 1;
+      height: 4px;
+      background-color: var(--glow-cyan);
+    }
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .another-skill {
+    margin-bottom: 40px;
+
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 15px;
+
+      .highlight-text {
+        color: var(--glow-purple);
+      }
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: var(--accent-green);
+    color: var(--primary-bg);
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(123, 237, 85, 0.3);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(123, 237, 85, 0.4);
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  .skills {
+    padding: 80px 50px;
+  }
+
+  .skills-container {
+    gap: 50px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 40px;
+  }
+
+  .skills-content .title-wrapper .section-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 992px) {
+  .skills-container {
+    flex-direction: column;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    order: 2;
+  }
+
+  .skills-content {
+    max-width: 100%;
+    order: 1;
+    text-align: center;
+
+    .title-wrapper {
+      justify-content: center;
+
+      .title-line {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 60px 30px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .skill-item .skill-icon {
+    width: 50px;
+    height: 50px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .skills-content .title-wrapper .section-title {
+    font-size: 40px;
+  }
+
+  .skills-content .another-skill h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
