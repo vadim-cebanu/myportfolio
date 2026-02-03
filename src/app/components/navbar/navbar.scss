@@ -9,6 +9,20 @@
   right: 0;
   z-index: 1000;
   background: transparent;
+  transition: transform 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+
+  // Hidden state - slide up
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  // Scrolled state - add background
+  &.scrolled {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 80px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
 
   .logo a {
     display: flex;

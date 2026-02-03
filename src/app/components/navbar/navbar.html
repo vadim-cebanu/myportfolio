@@ -1,11 +1,11 @@
-<nav class="navbar">
+<nav class="navbar" [class.hidden]="isHidden()" [class.scrolled]="isScrolled()">
   <div class="logo">
     <a href="#"><img src="img/logo.png" alt="Vadim Cebanu Logo" class="logo-img"></a>
   </div>
 
   <ul class="nav-links">
     <li><a href="#about">About me</a></li>
-    <li><a href="#skills" class="active">Skills</a></li>
+    <li><a href="skills" class="active">Skills</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
   </ul>
 
