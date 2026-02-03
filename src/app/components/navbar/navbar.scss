@@ -11,13 +11,12 @@
   background: transparent;
 
   .logo a {
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
 
-    .green {
-      color: var(--accent-green);
+    .logo-img {
+      height: 40px;
+      width: auto;
     }
   }
 
