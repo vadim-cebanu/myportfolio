@@ -8,31 +8,18 @@
   background-color: var(--primary-bg);
 }
 
-// Glow effects using images
-.glow {
+// Hero background glow
+.hero-glow {
   position: absolute;
-  pointer-events: none;
-  background-size: contain;
-  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/28. Hero Background.png');
+  background-size: cover;
   background-position: center;
-
-  &.glow-purple {
-    width: 800px;
-    height: 800px;
-    background-image: url('/img/Purple shadow 2.png');
-    left: -250px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &.glow-cyan {
-    width: 700px;
-    height: 700px;
-    background-image: url('/img/52. Blue shadow 1 V2.svg');
-    right: -200px;
-    top: 50%;
-    transform: translateY(-30%);
-  }
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 // Social icons
@@ -64,6 +51,12 @@
       width: 28px;
       height: 28px;
     }
+  }
+
+  .email-text {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 400;
   }
 }
 
