@@ -1,0 +1,43 @@
+<section class="contact" id="contact">
+  <div class="glow glow-purple"></div>
+
+  <div class="contact-container">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3 class="info-title">Got a problem to solve?</h3>
+        <p class="info-text">
+          Encourage people to contact you and describe what role
+          you see yourself in. Show that you will add value to their
+          projects through your work.
+        </p>
+        <p class="contact-cta">Need a Frontend developer? <a href="mailto:contact@example.com">Contact me!</a></p>
+      </div>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Your email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder="Your message" rows="5" required></textarea>
+        </div>
+        <div class="form-group checkbox">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">I've read the <a href="/privacy">privacy policy</a> and agree to the processing of my data as outlined.</label>
+        </div>
+        <button type="submit" class="submit-btn">Send message :)</button>
+      </form>
+    </div>
+  </div>
+
+  <button class="scroll-top" (click)="scrollToTop()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 16V8M8 12l4-4 4 4"/>
+    </svg>
+  </button>
+</section>
