@@ -42,22 +42,32 @@
       color: #ffffff;
       transition: color 0.3s ease;
       position: relative;
+      padding-bottom: 5px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent-green);
+        transition: width 0.3s ease;
+      }
 
       &:hover {
         color: var(--accent-green);
+
+        &::after {
+          width: 100%;
+        }
       }
 
       &.active {
         color: var(--accent-green);
 
         &::after {
-          content: '';
-          position: absolute;
-          bottom: -5px;
-          left: 0;
           width: 100%;
-          height: 2px;
-          background-color: var(--accent-green);
         }
       }
     }
