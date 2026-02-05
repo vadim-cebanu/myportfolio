@@ -38,6 +38,17 @@
     width: auto;
   }
 
+  .legal-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .separator {
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+  }
+
   .legal-link {
     font-size: 14px;
     color: var(--text-gray);
