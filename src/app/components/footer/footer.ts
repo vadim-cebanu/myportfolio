@@ -1,22 +1,10 @@
-import { Component, output } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
-export class Footer {
-  legalClick = output<void>();
-  imprintClick = output<void>();
-
-  onLegalClick(event: Event): void {
-    event.preventDefault();
-    this.legalClick.emit();
-  }
-
-  onImprintClick(event: Event): void {
-    event.preventDefault();
-    this.imprintClick.emit();
-  }
-}
+export class Footer {}

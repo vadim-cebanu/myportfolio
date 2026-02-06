@@ -1,25 +1,31 @@
 .testimonials {
   position: relative;
-  padding: 100px 80px;
-  overflow: hidden;
-  background-color: var(--primary-bg);
+  padding: 100px 100px;
+  overflow: visible;
+  background-color: #141D2F;
 }
 
-// Glow effect
+// Glow effect (using image as mask)
 .glow {
   position: absolute;
   pointer-events: none;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 
   &.glow-purple {
-    width: 800px;
-    height: 800px;
-    background-image: url('/img/Purple shadow portfolio.png');
-    left: -200px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 900px;
+    height: 900px;
+    background: #9747FF;
+    filter: blur(46.5px);
+    -webkit-mask-image: url('/img/Purple shadow portfolio.png');
+    mask-image: url('/img/Purple shadow portfolio.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    left: -250px;
+    top: -200px;
+    z-index: 1;
   }
 }
 

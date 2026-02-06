@@ -1,21 +1,9 @@
 .footer {
   position: relative;
-  padding: 40px 80px;
-  background-color: var(--primary-bg);
+  padding: 40px 100px;
+  background-color: #141D2F;
+  border-top: 4px solid #70E61C;
   overflow: hidden;
-
-  // Thick green line at top
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 1200px;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--accent-green) 20%, var(--accent-green) 80%, transparent);
-  }
 }
 
 .footer-container {
