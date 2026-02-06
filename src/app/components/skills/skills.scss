@@ -3,26 +3,33 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 100px 80px;
-  overflow: hidden;
-  background-color: var(--primary-bg);
+  padding: 100px 100px;
+  overflow: visible;
+  background-color: #141D2F;
 }
 
-// Glow effect using image
+// Green shadow from Figma (using image as mask)
 .glow {
   position: absolute;
   pointer-events: none;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 
   &.glow-green {
-    width: 900px;
-    height: 900px;
-    background-image: url('/img/Green shadow Skills Portfolio.png');
-    left: 50%;
+    width: 428.59px;
+    height: 951.44px;
+    left: -200px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    background: #70E61C;
+    filter: blur(46.5px);
+    -webkit-mask-image: url('/img/Green shadow Skills Portfolio.png');
+    mask-image: url('/img/Green shadow Skills Portfolio.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    z-index: 1;
   }
 }
 
@@ -123,7 +130,7 @@
     .title-line {
       flex: 1;
       height: 3px;
-      background-color: var(--glow-cyan);
+      background-color: var(--accent-green);
     }
   }
 
