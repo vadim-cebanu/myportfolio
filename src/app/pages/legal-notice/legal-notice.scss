@@ -9,6 +9,36 @@
   margin: 0 auto;
 }
 
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid var(--accent-green);
+  border-radius: 8px;
+  color: var(--accent-green);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-bottom: 40px;
+
+  &:hover {
+    background: var(--accent-green);
+    color: var(--primary-bg);
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(-4px);
+  }
+}
+
 .page-title {
   font-size: 56px;
   font-weight: 800;
