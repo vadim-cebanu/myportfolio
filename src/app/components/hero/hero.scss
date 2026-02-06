@@ -4,22 +4,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background-color: var(--primary-bg);
+  overflow: visible;
+  background-color: #141D2F;
 }
 
-// Hero background glow
-.hero-glow {
+// Purple shadow - left side (using SVG as mask)
+.hero-glow-cyan {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/img/28. Hero Background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 571.88px;
+  left: -21.13%;
+  right: 82.14%;
+  top: 110.64px;
+  background: #9747FF;
+  filter: blur(46.5px);
+  transform: rotate(38.85deg);
+  -webkit-mask-image: url('/img/Purple shadow left.svg');
+  mask-image: url('/img/Purple shadow left.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
   pointer-events: none;
+  z-index: 0;
+}
+
+// Cyan shadow - right side (using SVG as mask)
+.hero-glow-purple {
+  position: absolute;
+  height: 573.58px;
+  left: 75.32%;
+  right: -22.51%;
+  top: -6.3px;
+  background: #1CDAE6;
+  filter: blur(46.5px);
+  transform: rotate(-26.87deg);
+  -webkit-mask-image: url('/img/Purple shadow right.svg');
+  mask-image: url('/img/Purple shadow right.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  pointer-events: none;
+  z-index: 0;
 }
 
 // Social icons
