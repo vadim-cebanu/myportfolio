@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
 import { About } from './components/about/about';
@@ -7,62 +9,43 @@ import { Portfolio } from './components/portfolio/portfolio';
 import { Testimonials } from './components/testimonials/testimonials';
 import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Hero, About, Skills, Portfolio, Testimonials, Contact, Footer],
+  imports: [CommonModule, RouterOutlet, Navbar, Hero, About, Skills, Portfolio, Testimonials, Contact, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  showLegal = false;
-  showImprint = false;
+  isHomePage = true;
+
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.isHomePage = event.urlAfterRedirects === '/' || event.urlAfterRedirects === '';
+    });
+  }
 
   onNavClick(section: string): void {
-    this.showLegal = false;
-    this.showImprint = false;
+    if (!this.isHomePage) {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => this.scrollToSection(section), 100);
+      });
+    } else {
+      this.scrollToSection(section);
+    }
+  }
 
-    setTimeout(() => {
-      if (section === '') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+  private scrollToSection(section: string): void {
+    if (section === '') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 50);
-  }
-
-  openLegal(): void {
-    this.showLegal = true;
-    this.showImprint = false;
-    setTimeout(() => {
-      const legalSection = document.getElementById('legal');
-      if (legalSection) {
-        legalSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 50);
-  }
-
-  hideLegal(): void {
-    this.showLegal = false;
-    window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 100, behavior: 'smooth' });
-  }
-
-  openImprint(): void {
-    this.showImprint = true;
-    this.showLegal = false;
-    setTimeout(() => {
-      const imprintSection = document.getElementById('imprint');
-      if (imprintSection) {
-        imprintSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 50);
-  }
-
-  hideImprint(): void {
-    this.showImprint = false;
-    window.scrollTo({ top: document.body.scrollHeight - window.innerHeight - 100, behavior: 'smooth' });
+    }
   }
 }

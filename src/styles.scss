@@ -12,18 +12,34 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #1a1a2e;
+  background-color: #141D2F;
   color: #ffffff;
   overflow-x: hidden;
 }
 
 :root {
-  --primary-bg: #1a1a2e;
+  --primary-bg: #141D2F;
+  --primary-bg-dark: #141D2F;
   --text-white: #ffffff;
-  --accent-green: #7bed55;
-  --glow-purple: #9945ff;
-  --glow-cyan: #00d9ff;
+  --accent-green: #70E61C;
+  --glow-purple: #9747FF;
+  --glow-cyan: #1CDAE6;
   --text-gray: #8892b0;
+}
+
+// Title line animation
+@keyframes pulseLine {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.3);
+  }
+}
+
+.title-line {
+  animation: pulseLine 2s ease-in-out infinite;
+  transform-origin: center;
 }
 
 a {

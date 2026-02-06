@@ -1,5 +1,6 @@
 <app-navbar (navClick)="onNavClick($event)"></app-navbar>
-<main>
+
+<main *ngIf="isHomePage">
   <app-hero></app-hero>
   <app-about></app-about>
   <app-skills></app-skills>
@@ -7,83 +8,7 @@
   <app-testimonials></app-testimonials>
   <app-contact></app-contact>
 </main>
-<app-footer (legalClick)="openLegal()" (imprintClick)="openImprint()"></app-footer>
 
-<section class="legal-section" id="legal" [class.visible]="showLegal">
-  <div class="legal-container">
-    <button class="back-btn" (click)="hideLegal()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
-      </svg>
-      Back
-    </button>
+<router-outlet *ngIf="!isHomePage"></router-outlet>
 
-    <h1 class="page-title">Legal Notice</h1>
-
-    <div class="legal-content">
-      <h2 class="section-heading">Acceptance of terms</h2>
-      <p>By accessing and using this Portfolio, you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time.</p>
-
-      <h2 class="section-heading">Scope and ownership of the product</h2>
-      <p>This Portfolio has been developed as part of a web development project at the <a href="https://developerakademie.com" class="link" target="_blank">Developer Akademie GmbH</a>. It has an educational purpose and is not intended for extensive personal & business usage.</p>
-      <p>The design of this Portfolio is owned by the <a href="https://developerakademie.com" class="link" target="_blank">Developer Akademie GmbH</a>. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.</p>
-
-      <h2 class="section-heading">Proprietary rights</h2>
-      <p>Aside from the design owned by Developer Akademie GmbH, I retain all proprietary rights in this Portfolio, including any associated copyrighted material, trademarks, and other proprietary information.</p>
-
-      <h2 class="section-heading">Use of the product</h2>
-      <p>This Portfolio is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use for illegal activities is strictly prohibited.</p>
-
-      <h2 class="section-heading">Disclaimer of warranties and limitation of liability</h2>
-      <p>This Portfolio is provided "as is" without warranty of any kind, express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
-
-      <h2 class="section-heading">Indemnity</h2>
-      <p>You agree to indemnify, defend and hold harmless the owner of this Portfolio from and against any claim, demand, loss, damage, cost, or liability arising out of or relating to your use of this Portfolio.</p>
-
-      <p>For any questions or notices, please contact me at info&#64;vadimcebanu.dev</p>
-
-      <p class="date">Date: February 5, 2026</p>
-    </div>
-  </div>
-</section>
-
-<section class="legal-section" id="imprint" [class.visible]="showImprint">
-  <div class="legal-container">
-    <button class="back-btn" (click)="hideImprint()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
-      </svg>
-      Back
-    </button>
-
-    <h1 class="page-title">Imprint</h1>
-
-    <div class="legal-content">
-      <h2 class="section-heading">Information according to § 5 TMG</h2>
-      <ul>
-        <li>Vadim Cebanu</li>
-        <li>Your Address</li>
-        <li>City, Postcode</li>
-      </ul>
-
-      <h2 class="section-heading">Contact</h2>
-      <p class="highlight-text">Email: info&#64;vadimcebanu.dev</p>
-
-      <h2 class="section-heading">Responsible for content according to § 55 Abs. 2 RStV</h2>
-      <ul>
-        <li>Vadim Cebanu</li>
-        <li>Your Address</li>
-        <li>City, Postcode</li>
-      </ul>
-
-      <h2 class="section-heading">EU Dispute Resolution</h2>
-      <p>The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr" class="link" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
-      <p>Our email address can be found above in the imprint.</p>
-
-      <h2 class="section-heading">Consumer Dispute Resolution</h2>
-      <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
-
-      <p class="date">Date: February 5, 2026</p>
-    </div>
-  </div>
-</section>
+<app-footer></app-footer>

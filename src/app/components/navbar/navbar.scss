@@ -2,13 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 80px;
+  padding: 37px 100px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent;
+  background: #141D2F;
+  backdrop-filter: blur(32.5px);
   transition: transform 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
 
   // Hidden state - slide up
@@ -18,8 +19,7 @@
 
   // Scrolled state - add background
   &.scrolled {
-    backdrop-filter: blur(10px);
-    padding: 20px 80px;
+    padding: 20px 100px;
   }
 
   .logo a {
@@ -78,9 +78,9 @@
     gap: 10px;
 
     .lang-btn {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
+      width: 40px;
+      height: 30px;
+      border-radius: 25%;
       border: 1px solid rgba(255, 255, 255, 0.3);
       background: transparent;
       color: #ffffff;
