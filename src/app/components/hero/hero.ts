@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './hero.scss',
 })
 export class Hero {
+  private translationService = inject(TranslationService);
+  readonly t = this.translationService.t;
+
   scrollToContact(event: Event): void {
     event.preventDefault();
     const element = document.getElementById('contact');

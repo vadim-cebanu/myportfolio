@@ -8,7 +8,6 @@
   background-color: #141D2F;
 }
 
-// Purple shadow - left side (using SVG as mask)
 .hero-glow-cyan {
   position: absolute;
   height: 571.88px;
@@ -30,7 +29,6 @@
   z-index: 0;
 }
 
-// Cyan shadow - right side (using SVG as mask)
 .hero-glow-purple {
   position: absolute;
   height: 573.58px;
@@ -52,7 +50,6 @@
   z-index: 0;
 }
 
-// Social icons
 .social-icons {
   position: absolute;
   left: 80px;
@@ -84,13 +81,12 @@
   }
 
   .email-text {
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
     font-weight: 400;
   }
 }
 
-// Main content
 .hero-content {
   position: relative;
   z-index: 5;
@@ -151,7 +147,6 @@
   }
 }
 
-// Scroll indicator
 .scroll-indicator {
   position: absolute;
   right: 80px;
@@ -166,7 +161,7 @@
   span {
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 2px;
   }
@@ -188,48 +183,127 @@
   }
 }
 
-// Responsive
 @media (max-width: 1200px) {
-  .intro .text-content {
-    .name {
-      font-size: 70px;
+  .hero-glow-cyan {
+    height: 400px;
+    left: -25%;
+    filter: blur(40px);
+  }
+
+  .hero-glow-purple {
+    height: 400px;
+    filter: blur(40px);
+  }
+
+  .intro {
+    .vertical-text {
+      font-size: 22px;
     }
-    .title {
-      font-size: 28px;
-      letter-spacing: 5px;
+
+    .text-content {
+      .name {
+        font-size: 70px;
+      }
+      .title {
+        font-size: 28px;
+        letter-spacing: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-glow-cyan {
+    height: 350px;
+    left: -28%;
+    filter: blur(38px);
+  }
+
+  .hero-glow-purple {
+    height: 350px;
+    filter: blur(38px);
+  }
+
+  .social-icons {
+    left: 50px;
+  }
+
+  .scroll-indicator {
+    right: 50px;
+  }
+
+  .intro {
+    gap: 20px;
+
+    .vertical-text {
+      font-size: 20px;
+    }
+
+    .text-content {
+      .name {
+        font-size: 60px;
+      }
+      .title {
+        font-size: 24px;
+        letter-spacing: 4px;
+      }
+
+      .cta-btn {
+        padding: 16px 40px;
+        font-size: 17px;
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
+  .hero-glow-cyan {
+    height: 300px;
+    left: -30%;
+    top: 50px;
+    filter: blur(35px);
+    opacity: 0.7;
+  }
+
+  .hero-glow-purple {
+    height: 300px;
+    right: -30%;
+    filter: blur(35px);
+    opacity: 0.7;
+  }
+
   .social-icons {
-    left: 30px;
-    bottom: 30px;
-    gap: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
 
     .line {
-      width: 30px;
+      display: none;
+    }
+
+    .email-text {
+      display: none;
     }
   }
 
   .intro {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
 
     .vertical-text {
-      writing-mode: horizontal-tb;
-      transform: none;
+      font-size: 18px;
     }
 
     .text-content {
       text-align: center;
 
       .name {
-        font-size: 45px;
+        font-size: 55px;
       }
 
       .title {
-        font-size: 18px;
+        font-size: 22px;
         letter-spacing: 3px;
       }
 
@@ -241,7 +315,72 @@
   }
 
   .scroll-indicator {
-    right: 30px;
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-glow-cyan,
+  .hero-glow-purple {
+    height: 200px;
+    filter: blur(30px);
+    opacity: 0.5;
+  }
+
+  .hero {
+    min-height: 88vh;
+  }
+
+  .social-icons {
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 30px;
+    gap: 20px;
+
+    .line {
+      display: none;
+    }
+
+    .email-text {
+      display: none;
+    }
+  }
+
+  .intro {
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+
+    .vertical-text {
+      font-size: 16px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      letter-spacing: 2px;
+    }
+
+    .text-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .name {
+        font-size: 45px;
+        letter-spacing: -1px;
+      }
+
+      .title {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 16px;
+      }
+    }
   }
 }
