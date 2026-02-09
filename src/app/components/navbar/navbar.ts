@@ -1,5 +1,6 @@
-import { Component, HostListener, signal, output } from '@angular/core';
+import { Component, HostListener, signal, output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService, Language } from '../../services/translation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,15 +9,34 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+  private translationService = inject(TranslationService);
+
   isHidden = signal(false);
   isScrolled = signal(false);
+  isMenuOpen = signal(false);
   private lastScrollTop = 0;
   private scrollThreshold = 100;
 
   navClick = output<string>();
 
+  readonly t = this.translationService.t;
+  readonly currentLang = this.translationService.language;
+
+  toggleMenu(): void {
+    this.isMenuOpen.update(v => !v);
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen.set(false);
+  }
+
+  setLanguage(lang: Language): void {
+    this.translationService.setLanguage(lang);
+  }
+
   onNavClick(event: Event, section: string): void {
     event.preventDefault();
+    this.closeMenu();
     this.navClick.emit(section);
   }
 

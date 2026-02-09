@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,18 +11,17 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  box-sizing: border-box;
   z-index: 1000;
   background: #141D2F;
   backdrop-filter: blur(32.5px);
   transition: transform 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
 
-  // Hidden state - slide up
   &.hidden {
     transform: translateY(-100%);
   }
 
-  // Scrolled state - add background
   &.scrolled {
     padding: 20px 100px;
   }
@@ -84,7 +88,7 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       background: transparent;
       color: #ffffff;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -98,6 +102,184 @@
         border-color: var(--accent-green);
         color: #1a1a2e;
       }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+    flex-shrink: 0;
+
+    .hamburger-line {
+      width: 100%;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &.menu-open .hamburger {
+    .hamburger-line:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger-line:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 25px 30px;
+    position: relative;
+
+    &.scrolled {
+      padding: 15px 30px;
+    }
+
+    .hamburger {
+      display: flex !important;
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .language-switcher {
+      display: none;
+    }
+
+    .menu-overlay {
+      display: block;
+      pointer-events: none;
+
+      &.active {
+        pointer-events: auto;
+      }
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background: #1a2744;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      transition: right 0.3s ease;
+      z-index: 999;
+
+      &.active {
+        right: 0;
+      }
+
+      li {
+        &.mobile-only {
+          display: block;
+        }
+
+        &.mobile-lang-switcher {
+          display: flex;
+          gap: 15px;
+          margin-top: 20px;
+
+          .lang-btn {
+            width: 50px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              border-color: var(--accent-green);
+            }
+
+            &.active {
+              background-color: var(--accent-green);
+              border-color: var(--accent-green);
+              color: #1a1a2e;
+            }
+          }
+        }
+
+        a {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .language-switcher {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 30px;
+
+    &.scrolled {
+      padding: 15px 30px;
+    }
+
+    .logo .logo-img {
+      height: 32px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px 20px;
+
+    &.scrolled {
+      padding: 12px 20px;
+    }
+
+    .nav-links {
+      width: 80%;
     }
   }
 }
