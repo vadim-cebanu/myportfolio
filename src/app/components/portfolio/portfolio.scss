@@ -6,7 +6,6 @@
   background-color: #141D2F;
 }
 
-// Glow effect (using image as mask)
 .glow {
   position: absolute;
   pointer-events: none;
@@ -37,7 +36,6 @@
   z-index: 5;
 }
 
-// Header
 .portfolio-header {
   text-align: center;
   margin-bottom: 60px;
@@ -70,7 +68,6 @@
   }
 }
 
-// Projects Grid
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -157,7 +154,7 @@
         }
 
         .project-description {
-          font-size: 14px;
+          font-size: 16px;
           color: #333;
           line-height: 1.6;
           margin-bottom: 15px;
@@ -170,7 +167,7 @@
           gap: 8px;
 
           span {
-            font-size: 14px;
+            font-size: 16px;
             color: #9945ff;
             font-weight: 500;
 
@@ -194,8 +191,15 @@
   }
 }
 
-// Responsive
 @media (max-width: 1200px) {
+  .glow.glow-purple {
+    width: 600px;
+    height: 600px;
+    right: -150px;
+    top: -150px;
+    filter: blur(40px);
+  }
+
   .portfolio {
     padding: 80px 50px;
   }
@@ -212,6 +216,19 @@
 }
 
 @media (max-width: 992px) {
+  .glow.glow-purple {
+    width: 450px;
+    height: 450px;
+    right: -100px;
+    top: -100px;
+    filter: blur(35px);
+    opacity: 0.7;
+  }
+
+  .portfolio-header .section-title {
+    font-size: 48px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
     max-width: 600px;
@@ -220,26 +237,51 @@
 }
 
 @media (max-width: 768px) {
+  .glow.glow-purple {
+    width: 300px;
+    height: 300px;
+    right: -50px;
+    top: -50px;
+    filter: blur(30px);
+    opacity: 0.5;
+  }
+
   .portfolio {
     padding: 60px 30px;
   }
 
   .portfolio-header {
+    text-align: left;
+
     .title-wrapper {
+      justify-content: flex-start;
       gap: 15px;
 
-      .title-line {
-        width: 60px;
+      .title-line:first-child {
+        display: none;
+      }
+
+      .title-line:last-child {
+        flex: 1;
       }
     }
 
     .section-title {
       font-size: 40px;
     }
+
+    .subtitle {
+      text-align: left;
+    }
   }
 
   .project-card .project-image .project-overlay {
     opacity: 1;
+
+    .overlay-buttons .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
 
     .overlay-content {
       .project-title {
@@ -247,8 +289,69 @@
       }
 
       .project-description {
-        font-size: 13px;
+        font-size: 16px;
       }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .glow.glow-purple {
+    width: 200px;
+    height: 200px;
+    right: -30px;
+    top: -30px;
+    filter: blur(25px);
+    opacity: 0.4;
+  }
+
+  .portfolio {
+    padding: 50px 20px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 40px;
+    text-align: left;
+
+    .title-wrapper {
+      justify-content: flex-start;
+      gap: 15px;
+
+      .title-line:first-child {
+        display: none;
+      }
+
+      .title-line:last-child {
+        flex: 1;
+      }
+    }
+
+    .section-title {
+      font-size: 32px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .project-card .project-image {
+    border: 3px solid var(--accent-green);
+    border-radius: 15px;
+    aspect-ratio: 4/3;
+
+    img {
+      border-radius: 12px;
+    }
+
+    .project-overlay {
+      display: none;
     }
   }
 }

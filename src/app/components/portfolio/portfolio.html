@@ -5,11 +5,11 @@
     <div class="portfolio-header">
       <div class="title-wrapper">
         <div class="title-line"></div>
-        <h2 class="section-title">Portfolio</h2>
+        <h2 class="section-title">{{ t().portfolio.title }}</h2>
         <div class="title-line"></div>
       </div>
 
-      <p class="subtitle">Explore a selection of my work here – interact with projects to see my skills in action.</p>
+      <p class="subtitle">{{ t().portfolio.subtitle }}</p>
     </div>
 
     <div class="projects-grid">
@@ -18,13 +18,13 @@
           <img src="img/pokedex.png" alt="Pokedex Project">
           <div class="project-overlay">
             <div class="overlay-buttons">
-              <a href="#" class="btn btn-secondary">Github</a>
-              <a href="#" class="btn btn-primary">Live test</a>
+              <a href="#" class="btn btn-secondary">{{ t().portfolio.github }}</a>
+              <a href="#" class="btn btn-primary">{{ t().portfolio.liveTest }}</a>
             </div>
             <div class="overlay-content">
-              <h3 class="project-title">Pokedex</h3>
+              <h3 class="project-title">{{ t().portfolio.pokedexTitle }}</h3>
               <p class="project-description">
-                A Pokemon encyclopedia that fetches data from the PokeAPI. Browse, search and explore detailed information about different Pokemon.
+                {{ t().portfolio.pokedexDesc }}
               </p>
               <div class="project-tech">
                 <span>JavaScript</span>
@@ -45,13 +45,13 @@
           <img src="img/pollo.png" alt="El Pollo Loco Project">
           <div class="project-overlay">
             <div class="overlay-buttons">
-              <a href="#" class="btn btn-secondary">Github</a>
-              <a href="#" class="btn btn-primary">Live test</a>
+              <a href="#" class="btn btn-secondary">{{ t().portfolio.github }}</a>
+              <a href="#" class="btn btn-primary">{{ t().portfolio.liveTest }}</a>
             </div>
             <div class="overlay-content">
-              <h3 class="project-title">El Pollo Loco</h3>
+              <h3 class="project-title">{{ t().portfolio.polloTitle }}</h3>
               <p class="project-description">
-                Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.
+                {{ t().portfolio.polloDesc }}
               </p>
               <div class="project-tech">
                 <span>JavaScript</span>

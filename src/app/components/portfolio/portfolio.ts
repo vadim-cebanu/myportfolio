@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './portfolio.scss',
 })
 export class Portfolio {
-
+  private translationService = inject(TranslationService);
+  readonly t = this.translationService.t;
 }
