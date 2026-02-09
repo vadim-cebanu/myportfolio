@@ -5,7 +5,6 @@
   overflow: visible;
 }
 
-// Glow effect at bottom (using image as mask)
 .glow {
   position: absolute;
   pointer-events: none;
@@ -61,7 +60,6 @@
   align-items: flex-start;
 }
 
-// Left side
 .contact-info {
   flex: 1;
   max-width: 400px;
@@ -96,7 +94,6 @@
   }
 }
 
-// Right side - Form
 .contact-form {
   flex: 1;
   max-width: 500px;
@@ -144,7 +141,7 @@
       }
 
       label {
-        font-size: 14px;
+        font-size: 16px;
         color: var(--text-gray);
         line-height: 1.5;
 
@@ -179,7 +176,6 @@
   }
 }
 
-// Scroll to top button
 .scroll-top {
   position: absolute;
   right: 80px;
@@ -188,23 +184,29 @@
   height: 50px;
   background: transparent;
   border: none;
-  color: #ffffff;
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    color: var(--accent-green);
   }
 
-  svg {
+  img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
   }
 }
 
-// Responsive
 @media (max-width: 1200px) {
+  .glow.glow-purple {
+    width: 600px;
+    height: 600px;
+    right: -100px;
+    top: -150px;
+    filter: blur(40px);
+  }
+
   .contact {
     padding: 80px 50px;
   }
@@ -223,13 +225,28 @@
 }
 
 @media (max-width: 992px) {
+  .glow.glow-purple {
+    width: 400px;
+    height: 400px;
+    right: -80px;
+    top: -100px;
+    filter: blur(35px);
+    opacity: 0.7;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+
   .contact-content {
     flex-direction: column;
+    align-items: center;
   }
 
   .contact-info,
   .contact-form {
     max-width: 100%;
+    width: 100%;
   }
 
   .scroll-top {
@@ -238,15 +255,29 @@
 }
 
 @media (max-width: 768px) {
+  .glow.glow-purple {
+    width: 300px;
+    height: 300px;
+    right: -50px;
+    top: -80px;
+    filter: blur(30px);
+    opacity: 0.5;
+  }
+
   .contact {
     padding: 60px 30px;
   }
 
   .title-wrapper {
+    justify-content: flex-start;
     gap: 15px;
 
-    .title-line {
-      width: 60px;
+    .title-line:first-child {
+      display: none;
+    }
+
+    .title-line:last-child {
+      flex: 1;
     }
   }
 
@@ -254,11 +285,86 @@
     font-size: 40px;
   }
 
-  .contact-info .info-title {
-    font-size: 24px;
+  .contact-info {
+    text-align: left;
+
+    .info-title {
+      font-size: 24px;
+    }
   }
 
   .scroll-top {
     right: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glow.glow-purple {
+    width: 200px;
+    height: 200px;
+    right: -30px;
+    top: -50px;
+    filter: blur(25px);
+    opacity: 0.4;
+  }
+
+  .contact {
+    padding: 50px 20px;
+  }
+
+  .title-wrapper {
+    justify-content: flex-start;
+    gap: 15px;
+
+    .title-line:first-child {
+      display: none;
+    }
+
+    .title-line:last-child {
+      flex: 1;
+    }
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .contact-info {
+    text-align: left;
+
+    .info-title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .info-text {
+      font-size: 16px;
+    }
+  }
+
+  .contact-form {
+    .form-group {
+      input,
+      textarea {
+        padding: 14px 16px;
+        font-size: 16px;
+      }
+    }
+
+    .submit-btn {
+      display: inline-block;
+      width: auto;
+      padding: 12px 30px;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+
+    text-align: center;
+  }
+
+  .scroll-top {
+    right: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
