@@ -40,6 +40,13 @@
 
       <div class="skill-item">
         <div class="skill-icon">
+          <img src="img/firebase.png" alt="Firebase">
+        </div>
+        <span class="skill-name">Firebase</span>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-icon">
           <img src="img/Git.png" alt="Git">
         </div>
         <span class="skill-name">Git</span>
@@ -70,7 +77,7 @@
         <div class="skill-icon">
           <img src="img/Continually learning.png" alt="Continually learning">
         </div>
-        <span class="skill-name">Continually learning</span>
+        <span class="skill-name">{{ t().skills.continuallyLearning }}</span>
       </div>
     </div>
 
@@ -78,22 +85,20 @@
       <div class="title-wrapper">
                 <div class="title-line"></div>
 
-        <h2 class="section-title">My skills</h2>
+        <h2 class="section-title">{{ t().skills.title }}</h2>
         <div class="title-line"></div>
       </div>
 
       <p class="description">
-        Highlight your experience of working on different projects
-        using different front-end technologies (such as HTML, CSS,
-        JavaScript, etc.) and emphasise your openness to learning
-        and adapting to new technologies.<br><br>
-        Mention the importance of continuing education to keep
-        up with the rapid changes in web development.
+        {{ t().skills.description }}
       </p>
+    </div>
 
+    <div class="skills-cta">
       <div class="another-skill">
-        <h3>Looking for <span class="highlight-text">another skill</span>?</h3>
-        <p>Reveal enthusiasm for learning new technologies and frameworks.</p>
+        <h3>Looking for <span class="highlight-text">{{ t().skills.anotherSkill }}</span>?</h3>
+        <p>{{ t().skills.anotherSkillText }}</p>
       </div>
 
-      <a href="#contact" class="cta-btn" (click)="scrollToContact($event)">Get in touch!</a>
+      <a href="#contact" class="cta-btn" (click)="scrollToContact($event)">{{ t().skills.getInTouch }}</a>
+    </div>
