@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
 import { About } from './components/about/about';
@@ -18,13 +19,17 @@ import { filter } from 'rxjs/operators';
   styleUrl: './app.scss'
 })
 export class App {
+  private translate = inject(TranslateService);
   isHomePage = true;
 
   constructor(private router: Router) {
+    this.translate.use('en');
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.isHomePage = event.urlAfterRedirects === '/' || event.urlAfterRedirects === '';
+      window.scrollTo(0, 0);
     });
   }
 
