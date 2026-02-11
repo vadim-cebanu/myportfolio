@@ -16,7 +16,7 @@ export class Contact {
   sendSuccess = signal(false);
   sendError = signal(false);
 
-  private apiUrl = '/api/contact.php';
+  private apiUrl = 'https://formspree.io/f/xdalaywj';
 
   constructor(private http: HttpClient) {}
 
