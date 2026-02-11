@@ -1,15 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { TranslationService } from '../../services/translation.service';
+import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export class Contact {
-  private translationService = inject(TranslationService);
-  readonly t = this.translationService.t;
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });

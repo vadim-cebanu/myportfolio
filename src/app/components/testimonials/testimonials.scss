@@ -5,7 +5,6 @@
   background-color: #141D2F;
 }
 
-// Glow effect (using image as mask)
 .glow {
   position: absolute;
   pointer-events: none;
@@ -42,14 +41,14 @@
 
 .testimonial-card {
   flex: 1;
-  max-width: 500px;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--glow-purple);
   border-radius: 16px;
+  box-shadow: 0 0 15px rgba(151, 71, 255, 0.3), inset 0 0 15px rgba(151, 71, 255, 0.05);
 
   .quote-icon {
-    color: var(--glow-purple);
+    color: var(--accent-green);
     margin-bottom: 20px;
   }
 
@@ -64,7 +63,7 @@
   .divider {
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, var(--glow-purple), transparent);
+    background: linear-gradient(90deg, var(--accent-green), transparent);
     margin-bottom: 20px;
   }
 
@@ -80,8 +79,11 @@
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--accent-green);
   flex-shrink: 0;
+  background: #1a2332;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
     width: 100%;
@@ -166,29 +168,44 @@
 
 @media (max-width: 768px) {
   .glow.glow-purple {
-    width: 350px;
-    height: 350px;
-    left: -100px;
-    top: -80px;
-    filter: blur(30px);
-    opacity: 0.5;
+    width: 200px;
+    height: 200px;
+    left: -50px;
+    top: -50px;
+    filter: blur(25px);
+    opacity: 0.4;
   }
 
   .testimonials {
-    padding: 60px 30px;
+    padding: 50px 20px;
   }
 
   .testimonial-card {
-    padding: 30px;
+    padding: 25px;
 
     .quote-text {
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .author {
       font-size: 16px;
     }
   }
 
   .testimonial-image {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .nav-controls {
+    margin-top: 30px;
+    gap: 15px;
+
+    .nav-arrow {
+      width: 35px;
+      height: 35px;
+    }
   }
 }
 

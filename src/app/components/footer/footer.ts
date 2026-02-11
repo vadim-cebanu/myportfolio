@@ -1,14 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { TranslationService } from '../../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslateModule],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
-export class Footer {
-  private translationService = inject(TranslationService);
-  readonly t = this.translationService.t;
-}
+export class Footer {}

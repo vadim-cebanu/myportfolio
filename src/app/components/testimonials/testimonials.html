@@ -8,33 +8,28 @@
           <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
         </svg>
       </div>
-      <p class="quote-text">
-        Michael really kept the team together with his great organization
-        and clear communication. We wouldn't have got this far without
-        his commitment.
-      </p>
+      <p class="quote-text">{{ testimonials[currentIndex()].quoteKey | translate }}</p>
       <div class="divider"></div>
-      <p class="author">V. Schuster - Team Partner</p>
+      <p class="author">{{ testimonials[currentIndex()].authorKey | translate }}</p>
     </div>
 
     <div class="testimonial-image">
-      <img src="img/testimonial-person.png" alt="Testimonial">
+      <img [src]="testimonials[currentIndex()].image" alt="Testimonial">
     </div>
   </div>
 
   <div class="nav-controls">
-    <button class="nav-arrow prev">
+    <button class="nav-arrow prev" (click)="prev()">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M15 18l-6-6 6-6"/>
       </svg>
     </button>
     <div class="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+      @for (t of testimonials; track $index) {
+        <span class="dot" [class.active]="$index === currentIndex()" (click)="goTo($index)"></span>
+      }
     </div>
-    <button class="nav-arrow next">
+    <button class="nav-arrow next" (click)="next()">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M9 18l6-6-6-6"/>
       </svg>

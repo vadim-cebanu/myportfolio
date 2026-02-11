@@ -4,34 +4,34 @@
   <div class="contact-container">
     <div class="title-wrapper">
       <div class="title-line"></div>
-      <h2 class="section-title">{{ t().contact.title }}</h2>
+      <h2 class="section-title">{{ 'contact.title' | translate }}</h2>
       <div class="title-line"></div>
     </div>
 
     <div class="contact-content">
       <div class="contact-info">
-        <h3 class="info-title">{{ t().contact.infoTitle }}</h3>
+        <h3 class="info-title">{{ 'contact.infoTitle' | translate }}</h3>
         <p class="info-text">
-          {{ t().contact.infoText }}
+          {{ 'contact.infoText' | translate }}
         </p>
-        <p class="contact-cta">{{ t().contact.needDeveloper }} <a href="mailto:info@vadimcebanu.dev">{{ t().contact.contactMe }}</a></p>
+        <p class="contact-cta" [innerHTML]="'contact.contactCta' | translate"></p>
       </div>
 
       <form class="contact-form">
         <div class="form-group">
-          <input type="text" id="name" [placeholder]="t().contact.yourName" required>
+          <input type="text" id="name" [placeholder]="'contact.yourName' | translate" required>
         </div>
         <div class="form-group">
-          <input type="email" id="email" [placeholder]="t().contact.yourEmail" required>
+          <input type="email" id="email" [placeholder]="'contact.yourEmail' | translate" required>
         </div>
         <div class="form-group">
-          <textarea id="message" [placeholder]="t().contact.yourMessage" rows="5" required></textarea>
+          <textarea id="message" [placeholder]="'contact.yourMessage' | translate" rows="5" required></textarea>
         </div>
         <div class="form-group checkbox">
           <input type="checkbox" id="privacy" required>
-          <label for="privacy">{{ t().contact.privacyText }} <a href="/privacy">{{ t().contact.privacyPolicy }}</a> and agree to the processing of my data as outlined.</label>
+          <label for="privacy" [innerHTML]="'contact.privacyLabel' | translate"></label>
         </div>
-        <button type="submit" class="submit-btn">{{ t().contact.sendMessage }}</button>
+        <button type="submit" class="submit-btn">{{ 'contact.sendMessage' | translate }}</button>
       </form>
     </div>
   </div>
