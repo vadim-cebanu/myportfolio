@@ -57,7 +57,10 @@
     "yourEmail": "Your email",
     "yourMessage": "Your message",
     "privacyLabel": "I've read the <a href='/privacy'>privacy policy</a> and agree to the processing of my data as outlined.",
-    "sendMessage": "Send message :)"
+    "sendMessage": "Send message :)",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again."
   },
   "footer": {
     "legalNotice": "Legal Notice",

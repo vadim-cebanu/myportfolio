@@ -57,7 +57,10 @@
     "yourEmail": "Ihre E-Mail",
     "yourMessage": "Ihre Nachricht",
     "privacyLabel": "Ich habe die <a href='/privacy'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-    "sendMessage": "Nachricht senden :)"
+    "sendMessage": "Nachricht senden :)",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet!",
+    "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
   },
   "footer": {
     "legalNotice": "Impressum",
