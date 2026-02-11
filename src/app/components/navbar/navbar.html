@@ -12,10 +12,10 @@
   <div class="menu-overlay" [class.active]="isMenuOpen()" (click)="closeMenu()"></div>
 
   <ul class="nav-links" [class.active]="isMenuOpen()">
-    <li><a href="#about" (click)="onNavClick($event, 'about')">{{ t().navbar.aboutMe }}</a></li>
-    <li><a href="#skills" (click)="onNavClick($event, 'skills')">{{ t().navbar.skills }}</a></li>
-    <li><a href="#portfolio" (click)="onNavClick($event, 'portfolio')">{{ t().navbar.portfolio }}</a></li>
-    <li class="mobile-only"><a href="#contact" (click)="onNavClick($event, 'contact')">{{ t().navbar.contact }}</a></li>
+    <li><a href="#about" (click)="onNavClick($event, 'about')">{{ 'navbar.aboutMe' | translate }}</a></li>
+    <li><a href="#skills" (click)="onNavClick($event, 'skills')">{{ 'navbar.skills' | translate }}</a></li>
+    <li><a href="#portfolio" (click)="onNavClick($event, 'portfolio')">{{ 'navbar.portfolio' | translate }}</a></li>
+    <li class="mobile-only"><a href="#contact" (click)="onNavClick($event, 'contact')">{{ 'navbar.contact' | translate }}</a></li>
     <li class="mobile-only mobile-lang-switcher">
       <button class="lang-btn" [class.active]="currentLang() === 'de'" (click)="setLanguage('de')">DE</button>
       <button class="lang-btn" [class.active]="currentLang() === 'en'" (click)="setLanguage('en')">EN</button>

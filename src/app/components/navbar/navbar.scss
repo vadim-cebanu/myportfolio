@@ -258,14 +258,18 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 20px 30px;
+    padding: 15px 20px;
 
     &.scrolled {
-      padding: 15px 30px;
+      padding: 12px 20px;
     }
 
     .logo .logo-img {
       height: 32px;
+    }
+
+    .nav-links {
+      width: 80%;
     }
   }
 }

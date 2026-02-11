@@ -1,15 +1,15 @@
 import { Component, HostListener, signal, output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslationService, Language } from '../../services/translation.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
 export class Navbar {
-  private translationService = inject(TranslationService);
+  private translate = inject(TranslateService);
 
   isHidden = signal(false);
   isScrolled = signal(false);
@@ -19,8 +19,7 @@ export class Navbar {
 
   navClick = output<string>();
 
-  readonly t = this.translationService.t;
-  readonly currentLang = this.translationService.language;
+  currentLang = signal(this.translate.currentLang || 'en');
 
   toggleMenu(): void {
     this.isMenuOpen.update(v => !v);
@@ -30,8 +29,9 @@ export class Navbar {
     this.isMenuOpen.set(false);
   }
 
-  setLanguage(lang: Language): void {
-    this.translationService.setLanguage(lang);
+  setLanguage(lang: string): void {
+    this.translate.use(lang);
+    this.currentLang.set(lang);
   }
 
   onNavClick(event: Event, section: string): void {
