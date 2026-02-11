@@ -17,7 +17,7 @@
         <p class="contact-cta" [innerHTML]="'contact.contactCta' | translate"></p>
       </div>
 
-      <form class="contact-form">
+      <form class="contact-form" (submit)="$event.preventDefault(); sendEmail()">
         <div class="form-group">
           <input type="text" id="name" [placeholder]="'contact.yourName' | translate" required>
         </div>
@@ -31,7 +31,24 @@
           <input type="checkbox" id="privacy" required>
           <label for="privacy" [innerHTML]="'contact.privacyLabel' | translate"></label>
         </div>
-        <button type="submit" class="submit-btn">{{ 'contact.sendMessage' | translate }}</button>
+        <div class="button-container">
+          <button type="submit" class="submit-btn" [class.escaped]="buttonEscaped()" [disabled]="isSending()" (mouseenter)="onButtonHover()">
+            @if (isSending()) {
+              {{ 'contact.sending' | translate }}
+            } @else {
+              {{ 'contact.sendMessage' | translate }}
+            }
+          </button>
+          <div class="warning-message" [class.show]="showWarning()">
+            <span>⚠️ Please fill in all fields before submitting!</span>
+          </div>
+          @if (sendSuccess()) {
+            <div class="success-message">✅ {{ 'contact.success' | translate }}</div>
+          }
+          @if (sendError()) {
+            <div class="error-message">❌ {{ 'contact.error' | translate }}</div>
+          }
+        </div>
       </form>
     </div>
   </div>
