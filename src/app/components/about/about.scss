@@ -57,7 +57,7 @@
   }
 
   .section-title {
-    font-size: 72px;
+    font-size: 80px;
     font-weight: 800;
     color: #ffffff;
     line-height: 1;
@@ -89,7 +89,6 @@
   }
 }
 
-
 .features {
   display: flex;
   flex-direction: column;
@@ -112,8 +111,8 @@
     margin-top: 2px;
 
     img {
-      width: 18px;
-      height: 18px;
+      width: 26px;
+      height: 32px;
       object-fit: contain;
     }
   }
@@ -264,28 +263,21 @@
 
 @media (max-width: 768px) {
   .about-glow {
-    height: 200px;
-    opacity: 0.5;
+    height: 150px;
+    opacity: 0.4;
+    top: 350px;
   }
 
   .about-photo .glow {
-    &.glow-purple {
-      width: 180px;
-      height: 250px;
-      filter: blur(30px);
-      opacity: 0.5;
-    }
-
+    &.glow-purple,
     &.glow-photo {
-      width: 220px;
-      height: 160px;
-      filter: blur(30px);
-      opacity: 0.5;
+      display: none;
     }
   }
 
   .about {
-    padding: 60px 30px;
+    padding: 50px 20px;
+    padding-bottom: 150px;
   }
 
   .about-content {
@@ -305,8 +297,43 @@
     }
 
     .section-title {
-      font-size: 40px;
+      font-size: 36px;
     }
+
+    .intro-text {
+      .greeting {
+        font-size: 16px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .feature-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+
+    p {
+      font-size: 16px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  .about-photo .photo-container .profile-img {
+    max-width: 300px;
   }
 }
 

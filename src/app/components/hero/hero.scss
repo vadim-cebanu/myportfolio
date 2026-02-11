@@ -95,14 +95,14 @@
 
 .intro {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
 
   .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
-    font-size: 24px;
+    font-size: 90px;
     font-weight: 300;
     color: #ffffff;
     letter-spacing: 3px;
@@ -112,7 +112,7 @@
     text-align: left;
 
     .name {
-      font-size: 100px;
+      font-size: 128px;
       font-weight: 800;
       color: #ffffff;
       line-height: 1;
@@ -121,7 +121,7 @@
     }
 
     .title {
-      font-size: 42px;
+      font-size: 64px;
       font-weight: 600;
       color: var(--accent-green);
       letter-spacing: 8px;
@@ -129,7 +129,9 @@
     }
 
     .cta-btn {
-      display: inline-block;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
       padding: 18px 50px;
       background-color: var(--accent-green);
       color: var(--primary-bg);
@@ -258,24 +260,29 @@
 
 @media (max-width: 768px) {
   .hero-glow-cyan {
-    height: 300px;
+    height: 200px;
     left: -30%;
     top: 50px;
-    filter: blur(35px);
-    opacity: 0.7;
+    filter: blur(30px);
+    opacity: 0.5;
   }
 
   .hero-glow-purple {
-    height: 300px;
+    height: 200px;
     right: -30%;
-    filter: blur(35px);
-    opacity: 0.7;
+    filter: blur(30px);
+    opacity: 0.5;
+  }
+
+  .hero {
+    min-height: 88vh;
   }
 
   .social-icons {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 40px;
+    bottom: 30px;
+    gap: 20px;
 
     .line {
       display: none;
@@ -288,27 +295,37 @@
 
   .intro {
     flex-direction: row;
-    gap: 15px;
+    gap: 12px;
     align-items: center;
 
     .vertical-text {
       font-size: 18px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      letter-spacing: 2px;
     }
 
     .text-content {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       .name {
-        font-size: 55px;
+        font-size: 52px;
+        letter-spacing: -1px;
       }
 
       .title {
-        font-size: 22px;
-        letter-spacing: 3px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
       }
 
       .cta-btn {
-        padding: 15px 35px;
+        display: inline-block;
+        padding: 12px 25px;
         font-size: 16px;
       }
     }
