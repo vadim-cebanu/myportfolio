@@ -1,0 +1,66 @@
+{
+  "navbar": {
+    "aboutMe": "About me",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "iAm": "I am",
+    "title": "FRONTEND DEVELOPER",
+    "letsTalk": "Let's talk!",
+    "scrollDown": "Scroll down"
+  },
+  "about": {
+    "title": "About me",
+    "greeting": "Hi, I'm Vadim!",
+    "description": "As a frontend developer, I enjoy transforming ideas into interactive and visually appealing web applications. My passion for clean code and user-friendly interfaces drives me to constantly explore new technologies and best practices.",
+    "ctaText": "Let's connect and create something amazing together!",
+    "feature1": "Based in Germany, I am flexible with remote work and open to relocation opportunities for the right project.",
+    "feature2": "I am passionate about learning new technologies and continuously improving my skills to stay ahead in the ever-evolving tech landscape.",
+    "feature3": "I approach each challenge with analytical thinking and creativity, always striving to find efficient and elegant solutions through collaboration."
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "I have gained experience working on various projects using technologies like HTML, CSS, JavaScript, TypeScript, and Angular. I am always eager to learn new tools and adapt to emerging technologies.<br><br>Continuous learning is key in web development, and I stay up-to-date with the latest trends and best practices.",
+    "anotherSkillTitle": "Looking for <span class='highlight-text'>another skill</span>?",
+    "anotherSkillText": "Feel free to contact me. I am open to learning new technologies and frameworks to meet your project needs.",
+    "getInTouch": "Get in touch",
+    "continuallyLearning": "Continually learning"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Explore a selection of my work here – interact with projects to see my skills in action.",
+    "github": "Github",
+    "liveTest": "Live test",
+    "pokedexTitle": "Pokedex",
+    "pokedexDesc": "A Pokemon encyclopedia that fetches data from the PokeAPI. Browse, search and explore detailed information about different Pokemon.",
+    "polloTitle": "El Pollo Loco",
+    "polloDesc": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+    "dabubbleTitle": "DABubble",
+    "dabubbleDesc": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and all the features."
+  },
+  "testimonials": {
+    "quote1": "Vadim really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
+    "author1": "V. Schuster - Team Partner",
+    "quote2": "Working with Vadim was a great experience. He delivers clean, well-structured code and always meets deadlines. His attention to detail is impressive.",
+    "author2": "A. Müller - Project Manager",
+    "quote3": "Vadim is a reliable developer who brings creative solutions to complex problems. His frontend skills and team spirit make him a valuable asset.",
+    "author3": "L. Fischer - Developer Colleague"
+  },
+  "contact": {
+    "title": "Contact",
+    "infoTitle": "Got a problem to solve?",
+    "infoText": "Encourage people to contact you and describe what role you see yourself in. Show that you will add value to their projects through your work.",
+    "contactCta": "Need a Frontend developer? <a href='mailto:info@vadimcebanu.dev'>Contact me!</a>",
+    "yourName": "Your name",
+    "yourEmail": "Your email",
+    "yourMessage": "Your message",
+    "privacyLabel": "I've read the <a href='/privacy'>privacy policy</a> and agree to the processing of my data as outlined.",
+    "sendMessage": "Send message :)"
+  },
+  "footer": {
+    "legalNotice": "Legal Notice",
+    "imprint": "Imprint"
+  }
+}

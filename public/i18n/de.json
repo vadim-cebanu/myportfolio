@@ -1,0 +1,66 @@
+{
+  "navbar": {
+    "aboutMe": "Über mich",
+    "skills": "Fähigkeiten",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "iAm": "Ich bin",
+    "title": "FRONTEND ENTWICKLER",
+    "letsTalk": "Lass uns reden!",
+    "scrollDown": "Nach unten scrollen"
+  },
+  "about": {
+    "title": "Über mich",
+    "greeting": "Hi, ich bin Vadim!",
+    "description": "Als Frontend-Entwickler macht es mir Freude, Ideen in interaktive und visuell ansprechende Webanwendungen zu verwandeln. Meine Leidenschaft für sauberen Code und benutzerfreundliche Oberflächen treibt mich an, ständig neue Technologien und Best Practices zu erkunden.",
+    "ctaText": "Lass uns verbinden und gemeinsam etwas Erstaunliches schaffen!",
+    "feature1": "Ich lebe in Deutschland und bin flexibel für Remote-Arbeit sowie offen für Umzugsmöglichkeiten bei passenden Projekten.",
+    "feature2": "Ich bin begeistert davon, neue Technologien zu lernen und meine Fähigkeiten kontinuierlich zu verbessern, um in der sich ständig weiterentwickelnden Tech-Landschaft vorne zu bleiben.",
+    "feature3": "Ich gehe jede Herausforderung mit analytischem Denken und Kreativität an und strebe stets nach effizienten und eleganten Lösungen durch Zusammenarbeit."
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Ich habe Erfahrung in verschiedenen Projekten mit Technologien wie HTML, CSS, JavaScript, TypeScript und Angular gesammelt. Ich bin immer bereit, neue Tools zu erlernen und mich an neue Technologien anzupassen.<br><br>Kontinuierliches Lernen ist in der Webentwicklung entscheidend, und ich bleibe stets über die neuesten Trends und Best Practices informiert.",
+    "anotherSkillTitle": "Suchen Sie eine <span class='highlight-text'>weitere Fähigkeit</span>?",
+    "anotherSkillText": "Kontaktieren Sie mich gerne. Ich bin offen für das Erlernen neuer Technologien und Frameworks, um Ihre Projektanforderungen zu erfüllen.",
+    "getInTouch": "Kontakt aufnehmen",
+    "continuallyLearning": "Ständig lernend"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "github": "Github",
+    "liveTest": "Live-Test",
+    "pokedexTitle": "Pokedex",
+    "pokedexDesc": "Eine Pokemon-Enzyklopädie, die Daten von der PokeAPI abruft. Durchsuchen, suchen und erkunden Sie detaillierte Informationen über verschiedene Pokemon.",
+    "polloTitle": "El Pollo Loco",
+    "polloDesc": "Spring-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+    "dabubbleTitle": "DABubble",
+    "dabubbleDesc": "Diese App ist ein Slack Clone. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und allen Funktionen."
+  },
+  "testimonials": {
+    "quote1": "Vadim hat das Team mit seiner großartigen Organisation und klaren Kommunikation zusammengehalten. Ohne sein Engagement wären wir nicht so weit gekommen.",
+    "author1": "V. Schuster - Teampartner",
+    "quote2": "Die Zusammenarbeit mit Vadim war eine tolle Erfahrung. Er liefert sauberen, gut strukturierten Code und hält stets die Deadlines ein. Seine Liebe zum Detail ist beeindruckend.",
+    "author2": "A. Müller - Projektmanager",
+    "quote3": "Vadim ist ein zuverlässiger Entwickler, der kreative Lösungen für komplexe Probleme findet. Seine Frontend-Fähigkeiten und sein Teamgeist machen ihn zu einer wertvollen Bereicherung.",
+    "author3": "L. Fischer - Entwickler-Kollege"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "infoTitle": "Haben Sie ein Problem zu lösen?",
+    "infoText": "Ermutigen Sie Menschen, Sie zu kontaktieren und beschreiben Sie, welche Rolle Sie für sich sehen. Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für ihre Projekte schaffen werden.",
+    "contactCta": "Brauchen Sie einen Frontend-Entwickler? <a href='mailto:info@vadimcebanu.dev'>Kontaktieren Sie mich!</a>",
+    "yourName": "Ihr Name",
+    "yourEmail": "Ihre E-Mail",
+    "yourMessage": "Ihre Nachricht",
+    "privacyLabel": "Ich habe die <a href='/privacy'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "sendMessage": "Nachricht senden :)"
+  },
+  "footer": {
+    "legalNotice": "Impressum",
+    "imprint": "Impressum"
+  }
+}
