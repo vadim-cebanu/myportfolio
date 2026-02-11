@@ -55,7 +55,7 @@
   }
 
   .section-title {
-    font-size: 72px;
+    font-size: 80px;
     font-weight: 800;
     color: #ffffff;
   }
@@ -238,19 +238,20 @@
 
 @media (max-width: 768px) {
   .glow.glow-purple {
-    width: 300px;
-    height: 300px;
-    right: -50px;
-    top: -50px;
-    filter: blur(30px);
-    opacity: 0.5;
+    width: 200px;
+    height: 200px;
+    right: -30px;
+    top: -30px;
+    filter: blur(25px);
+    opacity: 0.4;
   }
 
   .portfolio {
-    padding: 60px 30px;
+    padding: 50px 20px;
   }
 
   .portfolio-header {
+    margin-bottom: 40px;
     text-align: left;
 
     .title-wrapper {
@@ -267,30 +268,31 @@
     }
 
     .section-title {
-      font-size: 40px;
+      font-size: 36px;
     }
 
     .subtitle {
+      font-size: 16px;
       text-align: left;
     }
   }
 
-  .project-card .project-image .project-overlay {
-    opacity: 1;
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
-    .overlay-buttons .btn {
-      padding: 10px 20px;
-      font-size: 16px;
+  .project-card .project-image {
+    border: 3px solid var(--accent-green);
+    border-radius: 15px;
+    aspect-ratio: 4/3;
+
+    img {
+      border-radius: 12px;
     }
 
-    .overlay-content {
-      .project-title {
-        font-size: 22px;
-      }
-
-      .project-description {
-        font-size: 16px;
-      }
+    .project-overlay {
+      display: none;
     }
   }
 }

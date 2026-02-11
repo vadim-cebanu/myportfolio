@@ -1,15 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { TranslationService } from '../../services/translation.service';
+import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })
 export class Skills {
-  private translationService = inject(TranslationService);
-  readonly t = this.translationService.t;
 
   scrollToContact(event: Event): void {
     event.preventDefault();

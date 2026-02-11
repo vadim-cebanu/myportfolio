@@ -77,28 +77,26 @@
         <div class="skill-icon">
           <img src="img/Continually learning.png" alt="Continually learning">
         </div>
-        <span class="skill-name">{{ t().skills.continuallyLearning }}</span>
+        <span class="skill-name">{{ 'skills.continuallyLearning' | translate }}</span>
       </div>
     </div>
 
     <div class="skills-content">
       <div class="title-wrapper">
-                <div class="title-line"></div>
-
-        <h2 class="section-title">{{ t().skills.title }}</h2>
+        <div class="title-line"></div>
+        <h2 class="section-title">{{ 'skills.title' | translate }}</h2>
         <div class="title-line"></div>
       </div>
 
-      <p class="description">
-        {{ t().skills.description }}
-      </p>
-    </div>
+      <p class="description" [innerHTML]="'skills.description' | translate"></p>
 
-    <div class="skills-cta">
-      <div class="another-skill">
-        <h3>Looking for <span class="highlight-text">{{ t().skills.anotherSkill }}</span>?</h3>
-        <p>{{ t().skills.anotherSkillText }}</p>
+      <div class="skills-cta">
+        <div class="another-skill">
+          <h3 [innerHTML]="'skills.anotherSkillTitle' | translate"></h3>
+          <p>{{ 'skills.anotherSkillText' | translate }}</p>
+        </div>
+
+        <a href="#contact" class="cta-btn" (click)="scrollToContact($event)">{{ 'skills.getInTouch' | translate }}</a>
       </div>
-
-      <a href="#contact" class="cta-btn" (click)="scrollToContact($event)">{{ t().skills.getInTouch }}</a>
     </div>
+

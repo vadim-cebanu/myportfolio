@@ -1,13 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { TranslationService } from '../../services/translation.service';
+import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
 })
-export class Portfolio {
-  private translationService = inject(TranslationService);
-  readonly t = this.translationService.t;
-}
+export class Portfolio {}
