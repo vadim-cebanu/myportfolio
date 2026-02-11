@@ -10,13 +10,13 @@
 
 .hero-glow-cyan {
   position: absolute;
-  height: 571.88px;
+  height: 512.88px;
   left: -21.13%;
-  right: 82.14%;
-  top: 110.64px;
+  right: 66.14%;
+  top: 50%;
+  transform: translateY(-50%);
   background: #9747FF;
   filter: blur(46.5px);
-  transform: rotate(38.85deg);
   -webkit-mask-image: url('/img/Purple shadow left.svg');
   mask-image: url('/img/Purple shadow left.svg');
   -webkit-mask-size: contain;
@@ -32,12 +32,12 @@
 .hero-glow-purple {
   position: absolute;
   height: 573.58px;
-  left: 75.32%;
-  right: -22.51%;
-  top: -6.3px;
+  left: 80%;
+  right: -10.51%;
+  top: 50%;
+  transform: translateY(-50%);
   background: #1CDAE6;
   filter: blur(46.5px);
-  transform: rotate(-26.87deg);
   -webkit-mask-image: url('/img/Purple shadow right.svg');
   mask-image: url('/img/Purple shadow right.svg');
   -webkit-mask-size: contain;
@@ -91,11 +91,17 @@
   position: relative;
   z-index: 5;
   text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .intro {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 30px;
 
   .vertical-text {
@@ -109,7 +115,7 @@
   }
 
   .text-content {
-    text-align: left;
+    text-align: center;
 
     .name {
       font-size: 128px;
@@ -142,8 +148,9 @@
       box-shadow: 0 4px 20px rgba(123, 237, 85, 0.3);
 
       &:hover {
+        background-color: var(--glow-purple);
         transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(123, 237, 85, 0.4);
+        box-shadow: 0 8px 30px rgba(151, 71, 255, 0.5);
       }
     }
   }
@@ -262,14 +269,12 @@
   .hero-glow-cyan {
     height: 200px;
     left: -30%;
-    top: 50px;
     filter: blur(30px);
     opacity: 0.5;
   }
 
   .hero-glow-purple {
     height: 200px;
-    right: -30%;
     filter: blur(30px);
     opacity: 0.5;
   }
@@ -295,6 +300,7 @@
 
   .intro {
     flex-direction: row;
+    justify-content: center;
     gap: 12px;
     align-items: center;
 
@@ -313,12 +319,12 @@
       align-items: center;
 
       .name {
-        font-size: 52px;
+        font-size: clamp(40px, 11vw, 52px);
         letter-spacing: -1px;
       }
 
       .title {
-        font-size: 20px;
+        font-size: clamp(14px, 4vw, 20px);
         letter-spacing: 2px;
         margin-bottom: 30px;
       }
@@ -344,6 +350,14 @@
     opacity: 0.5;
   }
 
+  .hero-glow-cyan{
+    top:50%;
+  }
+
+  .hero-glow-purple{
+    right:0%;
+  }
+
   .hero {
     min-height: 88vh;
   }
@@ -365,6 +379,7 @@
 
   .intro {
     flex-direction: row;
+    justify-content: center;
     gap: 12px;
     align-items: center;
 
@@ -383,13 +398,14 @@
       align-items: center;
 
       .name {
-        font-size: 45px;
+        font-size: clamp(32px, 10vw, 45px);
         letter-spacing: -1px;
+        word-break: break-word;
       }
 
       .title {
-        font-size: 18px;
-        letter-spacing: 2px;
+        font-size: clamp(12px, 4vw, 18px);
+        letter-spacing: 1px;
         margin-bottom: 30px;
       }
 

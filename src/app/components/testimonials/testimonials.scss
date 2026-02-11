@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: center;
   gap: 60px;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   z-index: 5;
@@ -92,7 +92,6 @@
   }
 }
 
-// Navigation
 .nav-controls {
   display: flex;
   align-items: center;
@@ -139,7 +138,6 @@
   }
 }
 
-// Responsive
 @media (max-width: 992px) {
   .glow.glow-purple {
     width: 500px;

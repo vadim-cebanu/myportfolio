@@ -1,29 +1,31 @@
 <nav class="navbar" [class.hidden]="isHidden()" [class.scrolled]="isScrolled()" [class.menu-open]="isMenuOpen()">
-  <div class="logo">
-    <a href="#" (click)="onNavClick($event, '')"><img src="img/logo.png" alt="Vadim Cebanu Logo" class="logo-img"></a>
-  </div>
+  <div class="navbar-content">
+    <div class="logo">
+      <a href="#" (click)="onNavClick($event, '')"><img src="img/logo.png" alt="Vadim Cebanu Logo" class="logo-img"></a>
+    </div>
 
-  <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-  </button>
+    <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
 
-  <div class="menu-overlay" [class.active]="isMenuOpen()" (click)="closeMenu()"></div>
+    <div class="menu-overlay" [class.active]="isMenuOpen()" (click)="closeMenu()"></div>
 
-  <ul class="nav-links" [class.active]="isMenuOpen()">
-    <li><a href="#about" (click)="onNavClick($event, 'about')">{{ 'navbar.aboutMe' | translate }}</a></li>
-    <li><a href="#skills" (click)="onNavClick($event, 'skills')">{{ 'navbar.skills' | translate }}</a></li>
-    <li><a href="#portfolio" (click)="onNavClick($event, 'portfolio')">{{ 'navbar.portfolio' | translate }}</a></li>
-    <li class="mobile-only"><a href="#contact" (click)="onNavClick($event, 'contact')">{{ 'navbar.contact' | translate }}</a></li>
-    <li class="mobile-only mobile-lang-switcher">
+    <ul class="nav-links" [class.active]="isMenuOpen()">
+      <li><a href="#about" (click)="onNavClick($event, 'about')">{{ 'navbar.aboutMe' | translate }}</a></li>
+      <li><a href="#skills" (click)="onNavClick($event, 'skills')">{{ 'navbar.skills' | translate }}</a></li>
+      <li><a href="#portfolio" (click)="onNavClick($event, 'portfolio')">{{ 'navbar.portfolio' | translate }}</a></li>
+      <li class="mobile-only"><a href="#contact" (click)="onNavClick($event, 'contact')">{{ 'navbar.contact' | translate }}</a></li>
+      <li class="mobile-only mobile-lang-switcher">
+        <button class="lang-btn" [class.active]="currentLang() === 'de'" (click)="setLanguage('de')">DE</button>
+        <button class="lang-btn" [class.active]="currentLang() === 'en'" (click)="setLanguage('en')">EN</button>
+      </li>
+    </ul>
+
+    <div class="language-switcher">
       <button class="lang-btn" [class.active]="currentLang() === 'de'" (click)="setLanguage('de')">DE</button>
       <button class="lang-btn" [class.active]="currentLang() === 'en'" (click)="setLanguage('en')">EN</button>
-    </li>
-  </ul>
-
-  <div class="language-switcher">
-    <button class="lang-btn" [class.active]="currentLang() === 'de'" (click)="setLanguage('de')">DE</button>
-    <button class="lang-btn" [class.active]="currentLang() === 'en'" (click)="setLanguage('en')">EN</button>
+    </div>
   </div>
 </nav>

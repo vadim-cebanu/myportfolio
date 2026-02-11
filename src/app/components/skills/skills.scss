@@ -37,11 +37,19 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 60px;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
   position: relative;
   z-index: 5;
+}
+
+.skills-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+  max-width: 450px;
 }
 
 .skills-grid {
@@ -57,6 +65,7 @@
   align-items: center;
   gap: 12px;
   text-align: center;
+  cursor: pointer;
 
   .skill-icon {
     width: 55px;
@@ -66,16 +75,34 @@
     justify-content: center;
     color: #ffffff;
     padding: 10px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 50%;
+      z-index: -1;
+    }
 
     img {
       width: 32px;
       height: 32px;
       object-fit: contain;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      filter: drop-shadow(0 0 0 transparent);
     }
 
     svg {
       width: 32px;
       height: 32px;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      filter: drop-shadow(0 0 0 transparent);
     }
 
     &.api-icon {
@@ -90,22 +117,74 @@
     font-size: 16px;
     font-weight: 500;
     color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  &:hover {
+    .skill-icon {
+      transform: translateY(-8px);
+
+      &::before {
+        opacity: 0.3;
+      }
+
+      img, svg {
+        transform: scale(1.15) rotateY(360deg);
+        filter: drop-shadow(0 8px 16px rgba(112, 230, 28, 0.4));
+      }
+    }
+
+    .skill-name {
+      color: var(--accent-green);
+      transform: translateY(-2px);
+    }
   }
 
   &.highlight {
     .skill-icon {
       color: var(--glow-purple);
+
+      &::before {
+        background: radial-gradient(circle, var(--glow-purple) 0%, transparent 70%);
+      }
     }
+
     .skill-name {
       color: var(--glow-purple);
+    }
+
+    &:hover {
+      .skill-icon {
+        img, svg {
+          filter: drop-shadow(0 8px 16px rgba(151, 71, 255, 0.5));
+        }
+      }
+
+      .skill-name {
+        color: var(--glow-purple);
+      }
+    }
+  }
+
+  animation: float 3s ease-in-out infinite;
+
+  @for $i from 1 through 11 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.15}s;
     }
   }
 }
 
-.skills-content {
-  flex: 1;
-  max-width: 450px;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
 
+.skills-content {
   .title-wrapper {
     display: flex;
     align-items: center;
@@ -131,13 +210,10 @@
     font-weight: 400;
     color: var(--text-gray);
     line-height: 1.7;
-    margin-bottom: 30px;
   }
 }
 
 .skills-cta {
-  margin-top: 10px;
-
   .another-skill {
     margin-bottom: 30px;
 
@@ -172,8 +248,9 @@
     box-shadow: 0 4px 20px rgba(123, 237, 85, 0.3);
 
     &:hover {
+      background-color: var(--glow-purple);
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(123, 237, 85, 0.4);
+      box-shadow: 0 8px 30px rgba(151, 71, 255, 0.5);
     }
   }
 }
@@ -218,17 +295,30 @@
     align-items: center;
   }
 
+  .skills-right {
+    display: contents;
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px 40px;
     order: 2;
-    justify-items: center;
     width: 100%;
     max-width: 500px;
+
+    .skill-item {
+      width: calc(25% - 30px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .skills-content {
-    max-width: 100%;
     order: 1;
+    width: 100%;
     text-align: center;
 
     .title-wrapper {
@@ -242,6 +332,12 @@
         font-size: 48px;
       }
     }
+  }
+
+  .skills-cta {
+    order: 3;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -260,25 +356,24 @@
 
   .skills-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .skills-right {
+    display: contents;
   }
 
   .skills-content {
     order: 1;
-    text-align: left;
+    text-align: center;
     width: 100%;
 
     .title-wrapper {
-      justify-content: flex-start;
+      justify-content: center;
       gap: 15px;
 
-      .title-line:first-child {
+      .title-line {
         display: none;
-      }
-
-      .title-line:last-child {
-        display: block;
-        flex: 1;
       }
 
       .section-title {
@@ -288,28 +383,29 @@
 
     .description {
       font-size: 16px;
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .skills-cta {
       text-align: center;
+    }
+  }
 
-      .another-skill {
-        h3 {
-          font-size: 20px;
-        }
+  .skills-cta {
+    order: 3;
+    width: 100%;
+    text-align: center;
 
-        p {
-          font-size: 16px;
-        }
+    .another-skill {
+      h3 {
+        font-size: 20px;
       }
 
-      .cta-btn {
-        display: inline-block;
-        padding: 12px 30px;
+      p {
         font-size: 16px;
       }
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 16px;
     }
   }
 
@@ -362,25 +458,24 @@
 
   .skills-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .skills-right {
+    display: contents;
   }
 
   .skills-content {
     order: 1;
-    text-align: left;
+    text-align: center;
     width: 100%;
 
     .title-wrapper {
-      justify-content: flex-start;
+      justify-content: center;
       gap: 15px;
 
-      .title-line:first-child {
+      .title-line {
         display: none;
-      }
-
-      .title-line:last-child {
-        display: block;
-        flex: 1;
       }
 
       .section-title {
@@ -390,28 +485,29 @@
 
     .description {
       font-size: 16px;
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .skills-cta {
       text-align: center;
+    }
+  }
 
-      .another-skill {
-        h3 {
-          font-size: 18px;
-        }
+  .skills-cta {
+    order: 3;
+    width: 100%;
+    text-align: center;
 
-        p {
-          font-size: 16px;
-        }
+    .another-skill {
+      h3 {
+        font-size: 18px;
       }
 
-      .cta-btn {
-        display: inline-block;
-        padding: 12px 30px;
+      p {
         font-size: 16px;
       }
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 16px;
     }
   }
 

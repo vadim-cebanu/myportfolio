@@ -5,7 +5,7 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 37px 100px;
   position: fixed;
@@ -26,6 +26,14 @@
     padding: 20px 100px;
   }
 
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+  }
+
   .logo a {
     display: flex;
     align-items: center;
@@ -39,6 +47,8 @@
   .nav-links {
     display: flex;
     gap: 50px;
+    margin-left: auto;
+    margin-right: 50px;
 
     li a {
       font-size: 16px;
@@ -94,7 +104,9 @@
       transition: all 0.3s ease;
 
       &:hover {
-        border-color: var(--accent-green);
+        border-color: var(--glow-purple);
+        background-color: var(--glow-purple);
+        color: #ffffff;
       }
 
       &.active {
@@ -173,7 +185,7 @@
     .hamburger {
       display: flex !important;
       position: absolute;
-      right: 40px;
+      right: 6%;
       top: 50%;
       transform: translateY(-50%);
     }
@@ -194,7 +206,7 @@
     .nav-links {
       position: fixed;
       top: 0;
-      right: -100%;
+      right: 0;
       width: 70%;
       max-width: 300px;
       height: 100vh;
@@ -203,11 +215,15 @@
       justify-content: center;
       align-items: center;
       gap: 35px;
-      transition: right 0.3s ease;
+      margin: 0;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
       z-index: 999;
+      visibility: hidden;
 
       &.active {
-        right: 0;
+        transform: translateX(0);
+        visibility: visible;
       }
 
       li {

@@ -30,7 +30,7 @@
 }
 
 .portfolio-container {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   z-index: 5;
@@ -252,19 +252,11 @@
 
   .portfolio-header {
     margin-bottom: 40px;
-    text-align: left;
+    text-align: center;
 
     .title-wrapper {
-      justify-content: flex-start;
+      justify-content: center;
       gap: 15px;
-
-      .title-line:first-child {
-        display: none;
-      }
-
-      .title-line:last-child {
-        flex: 1;
-      }
     }
 
     .section-title {
@@ -273,7 +265,7 @@
 
     .subtitle {
       font-size: 16px;
-      text-align: left;
+      text-align: center;
     }
   }
 
@@ -313,19 +305,11 @@
 
   .portfolio-header {
     margin-bottom: 40px;
-    text-align: left;
+    text-align: center;
 
     .title-wrapper {
-      justify-content: flex-start;
+      justify-content: center;
       gap: 15px;
-
-      .title-line:first-child {
-        display: none;
-      }
-
-      .title-line:last-child {
-        flex: 1;
-      }
     }
 
     .section-title {
@@ -334,7 +318,7 @@
 
     .subtitle {
       font-size: 16px;
-      text-align: left;
+      text-align: center;
     }
   }
 
