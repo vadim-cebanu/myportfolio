@@ -3,6 +3,7 @@
   padding: 100px 100px;
   background-color: #141D2F;
   overflow: visible;
+  isolation: isolate;
 }
 
 .glow {
@@ -24,13 +25,15 @@
     mask-position: center;
     right: -150px;
     top: -200px;
-    z-index: 1;
+    z-index: -1;
   }
 }
 
 .contact-container {
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .title-wrapper {
@@ -82,7 +85,7 @@
     font-size: 16px;
     color: var(--text-gray);
 
-    a {
+    ::ng-deep a {
       color: var(--accent-green);
       font-weight: 600;
       transition: color 0.3s ease;
@@ -104,7 +107,7 @@
     textarea {
       width: 100%;
       padding: 18px 20px;
-      background-color: transparent;
+      background-color: rgba(20, 29, 47, 0.8);
       border: 1px solid var(--accent-green);
       border-radius: 8px;
       color: white;
@@ -237,34 +240,6 @@
       transform: translateY(-3px);
       box-shadow: 0 8px 30px rgba(123, 237, 85, 0.4);
     }
-
-    &.escaped {
-      animation: runAway 2s ease-in-out infinite;
-      cursor: not-allowed;
-      background-color: #ff6b6b;
-
-      &:hover {
-        transform: none;
-      }
-    }
-  }
-}
-
-@keyframes runAway {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(-120px, -30px) scale(0.9) rotate(-15deg);
-  }
-  50% {
-    transform: translate(100px, -50px) scale(0.85) rotate(20deg);
-  }
-  75% {
-    transform: translate(-80px, 20px) scale(0.9) rotate(-10deg);
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
   }
 }
 

@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './contact.scss',
 })
 export class Contact {
-  buttonEscaped = signal(false);
   showWarning = signal(false);
   isSending = signal(false);
   sendSuccess = signal(false);
@@ -39,7 +38,12 @@ export class Contact {
     this.isSending.set(true);
     this.sendError.set(false);
 
-    this.http.post(this.apiUrl, { name, email, message }).subscribe({
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    });
+
+    this.http.post(this.apiUrl, { name, email, message }, { headers }).subscribe({
       next: () => {
         this.isSending.set(false);
         this.sendSuccess.set(true);
@@ -58,11 +62,7 @@ export class Contact {
 
   onButtonHover(): void {
     if (!this.isFormValid()) {
-      this.buttonEscaped.set(true);
       this.showWarning.set(true);
-      setTimeout(() => {
-        this.buttonEscaped.set(false);
-      }, 2000);
       setTimeout(() => {
         this.showWarning.set(false);
       }, 3000);
