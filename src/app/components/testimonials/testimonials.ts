@@ -18,17 +18,17 @@ export class Testimonials {
     {
       quoteKey: 'testimonials.quote1',
       authorKey: 'testimonials.author1',
-      image: 'img/mypng.png',
+      image: 'img/my.png',
     },
     {
       quoteKey: 'testimonials.quote2',
       authorKey: 'testimonials.author2',
-      image: 'img/mypng.png',
+      image: 'img/my.png',
     },
     {
       quoteKey: 'testimonials.quote3',
       authorKey: 'testimonials.author3',
-      image: 'img/mypng.png',
+      image: 'img/my.png',
     },
   ];
 

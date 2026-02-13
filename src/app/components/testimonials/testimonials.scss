@@ -3,6 +3,7 @@
   padding: 100px 100px;
   overflow: visible;
   background-color: #141D2F;
+
 }
 
 .glow {
@@ -36,20 +37,22 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  z-index: 5;
+    z-index: 1;
+
 }
 
 .testimonial-card {
   flex: 1;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgb(20,29,47);
   border: 2px solid var(--glow-purple);
   border-radius: 16px;
-  box-shadow: 0 0 15px rgba(151, 71, 255, 0.3), inset 0 0 15px rgba(151, 71, 255, 0.05);
-
+  box-shadow: 0 0 15px rgba(151, 255, 71, 0.3), inset 0 0 15px rgba(151, 71, 255, 0.05);
   .quote-icon {
     color: var(--accent-green);
     margin-bottom: 20px;
+
+
   }
 
   .quote-text {
@@ -58,6 +61,7 @@
     line-height: 1.7;
     margin-bottom: 30px;
     font-style: italic;
+
   }
 
   .divider {
@@ -80,10 +84,11 @@
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background: #1a2332;
+  background: var(--accent-green);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 3px solid var(--glow-purple);
 
   img {
     width: 100%;
