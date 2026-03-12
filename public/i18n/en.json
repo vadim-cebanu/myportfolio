@@ -38,15 +38,17 @@
     "polloTitle": "El Pollo Loco",
     "polloDesc": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
     "dabubbleTitle": "DABubble",
-    "dabubbleDesc": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and all the features."
+    "dabubbleDesc": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and all the features.",
+    "joinTitle": "Join",
+    "joinDesc": "A modern event planning platform that simplifies building meetups and managing participants."
   },
   "testimonials": {
-    "quote1": "Vadim really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
-    "author1": "V. Schuster - Team Partner",
-    "quote2": "Working with Vadim was a great experience. He delivers clean, well-structured code and always meets deadlines. His attention to detail is impressive.",
-    "author2": "A. Müller - Project Manager",
+    "quote1": "I had the pleasure of working with Vadim on frontend projects at the Developer Akademie. He is extremely hardworking, fast, and always willing to take on additional tasks when needed. His helpful attitude and strong work ethic made collaboration smooth and reliable.",
+    "author1": "Benjamin B. - Project Colleague",
+    "quote2": "Vadim is a hardworking, detail-oriented, and responsible team member. He consistently completed his tasks on time and was able to react quickly when needed, which helped keep the team’s workflow smooth. Technically, he is strong and pays attention to writing clean and well-structured code.",
+    "author2": "Serhat O. - Project Colleague",
     "quote3": "Vadim is a reliable developer who brings creative solutions to complex problems. His frontend skills and team spirit make him a valuable asset.",
-    "author3": "L. Fischer - Developer Colleague"
+    "author3": "Gregor Z. - Project Colleague"
   },
   "contact": {
     "title": "Contact",

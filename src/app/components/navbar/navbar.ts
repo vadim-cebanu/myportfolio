@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, output, inject } from '@angular/core';
+import { Component, HostListener, OnDestroy, signal, output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -8,7 +8,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar {
+export class Navbar implements OnDestroy {
   private translate = inject(TranslateService);
 
   isHidden = signal(false);
@@ -22,11 +22,33 @@ export class Navbar {
   currentLang = signal(this.translate.currentLang || 'en');
 
   toggleMenu(): void {
-    this.isMenuOpen.update(v => !v);
+    this.isMenuOpen.update(v => {
+      const next = !v;
+      if (this.isMobile() && next) {
+        this.setBodyScrollEnabled(false);
+      }
+      return next;
+    });
   }
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
+    this.setBodyScrollEnabled(true);
+  }
+
+  private isMobile(): boolean {
+    return window.matchMedia('(max-width: 992px)').matches;
+  }
+
+  private setBodyScrollEnabled(enabled: boolean): void {
+    document.body.style.overflow = enabled ? '' : 'hidden';
+    document.documentElement.style.overflow = enabled ? '' : 'hidden';
+  }
+
+  ngOnDestroy(): void {
+    if (this.isMobile()) {
+      this.setBodyScrollEnabled(true);
+    }
   }
 
   setLanguage(lang: string): void {

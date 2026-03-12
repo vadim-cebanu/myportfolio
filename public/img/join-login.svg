@@ -1,0 +1,65 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f7fb" />
+      <stop offset="100%" stop-color="#e6eef9" />
+    </linearGradient>
+
+    <linearGradient id="browser" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0f5ff" />
+    </linearGradient>
+
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)" />
+
+  <!-- Browser frame -->
+  <g transform="translate(160 140)">
+    <rect width="880" height="520" rx="24" fill="url(#browser)" filter="url(#shadow)" />
+
+    <!-- Browser top bar -->
+    <rect x="0" y="0" width="880" height="60" rx="24" fill="#f5f8ff" />
+    <circle cx="44" cy="30" r="10" fill="#ff5f56" />
+    <circle cx="76" cy="30" r="10" fill="#ffbd2e" />
+    <circle cx="108" cy="30" r="10" fill="#27c93f" />
+
+    <rect x="170" y="22" width="340" height="16" rx="8" fill="#e1e8ff" />
+
+    <!-- Main card -->
+    <g transform="translate(140 120)">
+      <rect width="600" height="380" rx="28" fill="#ffffff" />
+
+      <text x="300" y="72" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="52" font-weight="800" fill="#1f2a3c">Log in</text>
+      <line x1="220" y1="90" x2="580" y2="90" stroke="#2f7eff" stroke-width="4" stroke-linecap="round" />
+
+      <rect x="90" y="150" width="420" height="60" rx="18" fill="#f2f6ff" stroke="#c6d5f7" stroke-width="1" />
+      <text x="110" y="192" font-family="Segoe UI, system-ui, sans-serif" font-size="18" fill="#8b9bb8" opacity="0.9">Email</text>
+      <rect x="540" y="150" width="60" height="60" rx="18" fill="#e7efff" />
+      <path d="M558 172c0-2 1.7-4 4-4h12c2.2 0 4 1.8 4 4v12c0 2.2-1.8 4-4 4h-12c-2.3 0-4-1.8-4-4v-12z" fill="#2f7eff" />
+
+      <rect x="90" y="240" width="420" height="60" rx="18" fill="#f2f6ff" stroke="#c6d5f7" stroke-width="1" />
+      <text x="110" y="282" font-family="Segoe UI, system-ui, sans-serif" font-size="18" fill="#8b9bb8" opacity="0.9">Password</text>
+      <rect x="540" y="240" width="60" height="60" rx="18" fill="#e7efff" />
+      <path d="M558 262c0-2 1.7-4 4-4h12c2.2 0 4 1.8 4 4v22c0 2.2-1.8 4-4 4h-12c-2.3 0-4-1.8-4-4v-22z" fill="#2f7eff" />
+
+      <rect x="90" y="330" width="210" height="54" rx="14" fill="#2f7eff" />
+      <text x="195" y="364" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Log in</text>
+
+      <rect x="310" y="330" width="210" height="54" rx="14" fill="#ffffff" stroke="#2f7eff" stroke-width="2" />
+      <text x="415" y="364" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="700" fill="#2f7eff">Guest Log in</text>
+
+      <text x="300" y="426" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#8b9bb8">Not a Join user? Sign up</text>
+    </g>
+
+    <!-- Logo accent -->
+    <g transform="translate(40 36)">
+      <path d="M56 0c-30 0-56 26-56 56v10c0 12 10 22 22 22h64c12 0 22-10 22-22V56C108 26 82 0 56 0z" fill="#1f2a3c" />
+      <rect x="48" y="46" width="22" height="22" rx="4" fill="#2f7eff" />
+      <text x="12" y="100" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="800" fill="#1f2a3c">JOIN</text>
+    </g>
+  </g>
+</svg>

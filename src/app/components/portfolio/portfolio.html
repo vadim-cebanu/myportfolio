@@ -12,57 +12,59 @@
       <p class="subtitle">{{ 'portfolio.subtitle' | translate }}</p>
     </div>
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-image">
-          <img src="img/pokedex.png" alt="Pokedex Project">
-          <div class="project-overlay">
-            <div class="overlay-buttons">
-              <a href="https://github.com/vadim-cebanu/pokedex" target="_blank" class="btn btn-secondary">{{ 'portfolio.github' | translate }}</a>
-              <a href="https://pokedex.vadimcebanu.dev/" target="_blank" class="btn btn-primary">{{ 'portfolio.liveTest' | translate }}</a>
-            </div>
-            <div class="overlay-content">
-              <h3 class="project-title">{{ 'portfolio.pokedexTitle' | translate }}</h3>
-              <p class="project-description">
-                {{ 'portfolio.pokedexDesc' | translate }}
-              </p>
-              <div class="project-tech">
-                <span>JavaScript</span>
-                <span>|</span>
-                <span>HTML</span>
-                <span>|</span>
-                <span>CSS</span>
-                <span>|</span>
-                <span>API</span>
+    <div
+      class="portfolio-carousel"
+      [class.no-transition]="!transitionEnabled()"
+      [style.--current-slide]="currentSlide()"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let project of visibleItems; let i = index">
+          <div class="project-card" (click)="toggleProject(i)" [class.active]="activeProject() === i">
+            <div class="project-image">
+              <img [src]="project.image" [alt]="project.alt" />
+              <div class="project-overlay" (click)="$event.stopPropagation()" [class.open]="activeProject() === i">
+                <div class="overlay-buttons">
+                  <a
+                    [href]="project.github"
+                    target="_blank"
+                    class="btn btn-secondary"
+                    >{{ 'portfolio.github' | translate }}</a
+                  >
+                  <a
+                    [href]="project.live"
+                    target="_blank"
+                    class="btn btn-primary"
+                    >{{ 'portfolio.liveTest' | translate }}</a
+                  >
+                </div>
+                <div class="overlay-content">
+                  <h3 class="project-title">{{ project.titleKey | translate }}</h3>
+                  <p class="project-description">
+                    {{ project.descKey | translate }}
+                  </p>
+                  <div class="project-tech">
+                    <ng-container *ngFor="let tech of project.tech; let j = index">
+                      <span>{{ tech }}</span>
+                      <span *ngIf="j < project.tech.length - 1">|</span>
+                    </ng-container>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-image">
-          <img src="img/pollo.png" alt="El Pollo Loco Project">
-          <div class="project-overlay">
-            <div class="overlay-buttons">
-              <a href="https://github.com/vadim-cebanu/El-Pollo-Loco" target="_blank" class="btn btn-secondary">{{ 'portfolio.github' | translate }}</a>
-              <a href="https://elpollo.vadimcebanu.dev/" target="_blank" class="btn btn-primary">{{ 'portfolio.liveTest' | translate }}</a>
-            </div>
-            <div class="overlay-content">
-              <h3 class="project-title">{{ 'portfolio.polloTitle' | translate }}</h3>
-              <p class="project-description">
-                {{ 'portfolio.polloDesc' | translate }}
-              </p>
-              <div class="project-tech">
-                <span>JavaScript</span>
-                <span>|</span>
-                <span>HTML</span>
-                <span>|</span>
-                <span>CSS</span>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      <div class="carousel-dots">
+        <button
+          class="carousel-dot"
+          *ngFor="let _ of projects; let i = index"
+          type="button"
+          (click)="goTo(i)"
+          [class.active]="currentSlide() === i + 1"
+          [attr.aria-label]="'Go to project ' + (i + 1)"
+        ></button>
       </div>
     </div>
   </div>

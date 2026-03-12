@@ -1,7 +1,7 @@
 .portfolio {
   min-height: 100vh;
   position: relative;
-  padding: 100px 100px;
+  padding: 120px 100px;
   overflow: visible;
   background-color: #141D2F;
 }
@@ -68,6 +68,90 @@
   }
 }
 
+.portfolio-carousel {
+  --card-width: 520px;
+  --gap: 60px;
+
+  position: relative;
+  overflow: hidden;
+  padding: 0 40px;
+
+  &.no-transition .carousel-inner {
+    transition: none !important;
+  }
+
+  .carousel-inner {
+    display: flex;
+    gap: var(--gap);
+    transition: transform 0.45s ease;
+    transform: translateX(calc((50% - var(--card-width) / 2) - var(--current-slide, 0) * (var(--card-width) + var(--gap))));
+  }
+
+  .carousel-item {
+    flex: 0 0 var(--card-width);
+    scroll-snap-align: center;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.55);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      transform: translateY(-50%) scale(1);
+    }
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+
+    &.active {
+      background: rgba(153, 69, 255, 0.95);
+      border-color: rgba(153, 69, 255, 0.85);
+      transform: scale(1.25);
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.55);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -75,12 +159,23 @@
 }
 
 .project-card {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+  }
+
   .project-image {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    border: 3px solid var(--accent-green);
-    box-shadow: 0 0 30px rgba(123, 237, 85, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 25px rgba(130, 95, 255, 0.18);
     aspect-ratio: 16/10;
 
     img {
@@ -102,13 +197,13 @@
       .overlay-buttons {
         display: flex;
         justify-content: center;
-        gap: 20px;
-        padding: 30px;
+        gap: 18px;
+        padding: 28px;
         background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
 
         .btn {
           padding: 12px 30px;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 600;
           border-radius: 8px;
           transition: all 0.3s ease;
@@ -116,23 +211,23 @@
           text-decoration: none;
 
           &.btn-primary {
-            background-color: #9945ff;
+            background-color: rgba(153, 69, 255, 0.95);
             color: #ffffff;
 
             &:hover {
               transform: translateY(-3px);
-              box-shadow: 0 8px 25px rgba(153, 69, 255, 0.4);
+              box-shadow: 0 10px 30px rgba(153, 69, 255, 0.45);
             }
           }
 
           &.btn-secondary {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.18);
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(6px);
 
             &:hover {
-              background-color: rgba(255, 255, 255, 0.3);
+              background-color: rgba(255, 255, 255, 0.28);
               transform: translateY(-3px);
             }
           }
@@ -141,35 +236,36 @@
 
       .overlay-content {
         margin-top: auto;
-        background: #ffffff;
-        padding: 30px;
-        border-radius: 15px 15px 17px 17px;
+        background: rgba(255, 255, 255, 0.96);
+        padding: 18px;
+        border-radius: 18px 18px 20px 20px;
         text-align: center;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
 
         .project-title {
-          font-size: 28px;
+          font-size: 26px;
           font-weight: 700;
           color: var(--accent-green);
-          margin-bottom: 12px;
+          margin-bottom: 10px;
         }
 
         .project-description {
-          font-size: 16px;
-          color: #333;
+          font-size: 15px;
+          color: #2b2b2b;
           line-height: 1.6;
-          margin-bottom: 15px;
+          margin-bottom: 14px;
         }
 
         .project-tech {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          gap: 8px;
+          gap: 10px;
 
           span {
-            font-size: 16px;
-            color: #9945ff;
-            font-weight: 500;
+            font-size: 15px;
+            color: #6633ff;
+            font-weight: 600;
 
             &:nth-child(even) {
               color: #666;
@@ -181,7 +277,7 @@
 
     &:hover {
       img {
-        transform: scale(1.05);
+        transform: scale(1.08);
       }
 
       .project-overlay {
@@ -229,6 +325,11 @@
     font-size: 48px;
   }
 
+  .portfolio-carousel {
+    --card-width: 340px;
+    --gap: 28px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
     max-width: 600px;
@@ -246,8 +347,9 @@
     opacity: 0.4;
   }
 
-  .portfolio {
-    padding: 50px 20px;
+  .portfolio-carousel {
+    --card-width: 300px;
+    --gap: 20px;
   }
 
   .portfolio-header {
@@ -284,7 +386,15 @@
     }
 
     .project-overlay {
-      display: none;
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+
+      &.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
   }
 }
@@ -301,6 +411,11 @@
 
   .portfolio {
     padding: 50px 20px;
+  }
+
+  .portfolio-carousel {
+    --card-width: 260px;
+    --gap: 18px;
   }
 
   .portfolio-header {
@@ -327,6 +442,10 @@
     gap: 30px;
   }
 
+  .overlay-content {
+    padding: 6px;
+  }
+
   .project-card .project-image {
     border: 3px solid var(--accent-green);
     border-radius: 15px;
@@ -336,8 +455,17 @@
       border-radius: 12px;
     }
 
+
     .project-overlay {
-      display: none;
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+
+      &.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
   }
 }

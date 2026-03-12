@@ -38,7 +38,9 @@
     "polloTitle": "El Pollo Loco",
     "polloDesc": "Spring-, Lauf- und Wurfspiel basierend auf objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
     "dabubbleTitle": "DABubble",
-    "dabubbleDesc": "Diese App ist ein Slack Clone. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und allen Funktionen."
+    "dabubbleDesc": "Diese App ist ein Slack Clone. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und allen Funktionen.",
+    "joinTitle": "Join",
+    "joinDesc": "Eine moderne Event-Planungsplattform, die das Organisieren von Meetups und das Verwalten von Teilnehmern vereinfacht."
   },
   "testimonials": {
     "quote1": "Vadim hat das Team mit seiner großartigen Organisation und klaren Kommunikation zusammengehalten. Ohne sein Engagement wären wir nicht so weit gekommen.",
