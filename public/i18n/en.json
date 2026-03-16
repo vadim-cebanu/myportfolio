@@ -65,7 +65,6 @@
     "error": "Failed to send message. Please try again."
   },
   "footer": {
-    "legalNotice": "Legal Notice",
-    "imprint": "Imprint"
+    "legalNotice": "Legal Notice"
   }
 }
