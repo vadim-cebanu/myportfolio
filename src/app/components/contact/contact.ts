@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, AfterViewInit, OnDestroy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
-export class Contact {
+export class Contact implements AfterViewInit, OnDestroy {
+  private privacyLinkListener?: (e: Event) => void;
   showWarning = signal(false);
   isSending = signal(false);
   sendSuccess = signal(false);
@@ -17,7 +19,28 @@ export class Contact {
 
   private apiUrl = 'https://formspree.io/f/xdalaywj';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
+
+  ngAfterViewInit(): void {
+    // Add click listener for privacy policy link
+    setTimeout(() => {
+      const privacyLabel = document.querySelector('label[for="privacy"] a');
+      if (privacyLabel) {
+        this.privacyLinkListener = (e: Event) => {
+          e.preventDefault();
+          this.router.navigate(['/privacy']);
+        };
+        privacyLabel.addEventListener('click', this.privacyLinkListener as EventListener);
+      }
+    }, 100);
+  }
+
+  ngOnDestroy(): void {
+    const privacyLabel = document.querySelector('label[for="privacy"] a');
+    if (privacyLabel && this.privacyLinkListener) {
+      privacyLabel.removeEventListener('click', this.privacyLinkListener as EventListener);
+    }
+  }
 
   isFormValid(): boolean {
     const name = (document.getElementById('name') as HTMLInputElement)?.value;
