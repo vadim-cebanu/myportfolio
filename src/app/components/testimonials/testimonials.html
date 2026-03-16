@@ -9,8 +9,10 @@
         </svg>
       </div>
       <p class="quote-text">{{ testimonials[currentIndex()].quoteKey | translate }}</p>
-      <div class="divider"></div>
-      <p class="author">{{ testimonials[currentIndex()].authorKey | translate }}</p>
+      <div class="author-wrapper">
+        <div class="divider"></div>
+        <p class="author">{{ testimonials[currentIndex()].authorKey | translate }}</p>
+      </div>
     </div>
 
     <div class="testimonial-image">
