@@ -39,9 +39,7 @@
               {{ 'contact.sendMessage' | translate }}
             }
           </button>
-          <div class="warning-message" [class.show]="showWarning()">
-            <span>⚠️ Please fill in all fields before submitting!</span>
-          </div>
+          
           @if (sendSuccess()) {
             <div class="success-message">✅ {{ 'contact.success' | translate }}</div>
           }

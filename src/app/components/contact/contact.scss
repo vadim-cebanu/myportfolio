@@ -39,7 +39,7 @@
 .title-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 20px;
   margin-bottom: 60px;
 
@@ -53,7 +53,6 @@
 .section-title {
   font-size: 80px;
   font-weight: 800;
-  color: #ffffff;
   text-align: center;
 }
 
@@ -69,29 +68,28 @@
 
   .info-title {
     font-size: 32px;
-    font-weight: 700;
-    color: #ffffff;
+    font-weight: 300;
     margin-bottom: 20px;
   }
 
   .info-text {
     font-size: 16px;
-    color: var(--text-gray);
     line-height: 1.7;
     margin-bottom: 30px;
+    font-weight: 300;
   }
 
   .contact-cta {
     font-size: 16px;
-    color: var(--text-gray);
+    font-weight: 300;
 
     ::ng-deep a {
-      color: var(--accent-green);
-      font-weight: 600;
+      color: var(--glow-purple);
+      font-weight: 300;
       transition: color 0.3s ease;
 
       &:hover {
-        color: #ffffff;
+        color:var(--accent-green);
       }
     }
   }
@@ -114,6 +112,7 @@
       font-size: 16px;
       font-family: inherit;
       transition: border-color 0.3s ease;
+      font-weight: 300;
 
       &::placeholder {
         color: var(--text-gray-);
@@ -140,19 +139,23 @@
         height: 20px;
         margin-top: 3px;
         cursor: pointer;
+        accent-color: var(--accent-green);
+        border: 2px solid var(--accent-green);
+        border-radius: 4px;
       }
 
       label {
         font-size: 16px;
-        color: var(--text-gray);
         line-height: 1.5;
+        font-weight: 300;
 
-        a {
+        ::ng-deep a {
           color: var(--glow-purple);
           text-decoration: underline;
+          transition: color 0.3s ease;
 
           &:hover {
-            color: var(--glow-purple);
+            color: var(--accent-green);
           }
         }
       }
@@ -174,7 +177,7 @@
     padding: 10px 20px;
     border-radius: 8px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 300;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
@@ -228,7 +231,7 @@
     background-color: var(--accent-green);
     color: var(--primary-bg);
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 300;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -316,6 +319,11 @@
     width: 100%;
   }
 
+  .title-wrapper{
+    justify-content: center;
+
+  }
+
   .scroll-top {
     right: 50px;
   }
@@ -350,7 +358,7 @@
 
     .info-title {
       font-size: 24px;
-      font-weight: bold;
+      font-weight: 300;
     }
 
     .info-text {
@@ -414,7 +422,7 @@
 
     .info-title {
       font-size: 22px;
-      font-weight: bold;
+      font-weight: 300;
     }
 
     .info-text {
