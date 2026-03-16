@@ -19,7 +19,7 @@
   border-radius: 8px;
   color: var(--accent-green);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 300;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -50,7 +50,7 @@
 .legal-content {
   .section-heading {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 300;
     color: var(--accent-green);
     margin-top: 30px;
     margin-bottom: 15px;
@@ -60,6 +60,7 @@
     font-size: 16px;
     color: var(--text-gray);
     line-height: 1.7;
+    font-weight: 300;
     margin-bottom: 15px;
   }
 
@@ -71,6 +72,8 @@
       font-size: 16px;
       color: var(--text-gray);
       line-height: 1.7;
+      font-weight: 300;
+
     }
   }
 
@@ -91,7 +94,7 @@
 
   .date {
     margin-top: 40px;
-    font-style: italic;
+    font-style: normal;
   }
 }
 

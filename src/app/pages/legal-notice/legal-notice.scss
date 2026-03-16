@@ -19,7 +19,7 @@
   border-radius: 8px;
   color: var(--accent-green);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 300;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -50,7 +50,7 @@
 .legal-content {
   .section-heading {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 300;
     color: var(--accent-green);
     margin-top: 30px;
     margin-bottom: 15px;
@@ -61,6 +61,8 @@
     color: var(--text-gray);
     line-height: 1.7;
     margin-bottom: 15px;
+    font-weight: 300;
+
   }
 
   ul {
@@ -71,6 +73,7 @@
       font-size: 16px;
       color: var(--text-gray);
       line-height: 1.7;
+
     }
   }
 
@@ -91,7 +94,7 @@
 
   .date {
     margin-top: 40px;
-    font-style: italic;
+    font-style: normal;
   }
 }
 
@@ -119,7 +122,8 @@
       font-size: 18px;
     }
 
-    p, ul li {
+    p,
+    ul li {
       font-size: 16px;
     }
   }
