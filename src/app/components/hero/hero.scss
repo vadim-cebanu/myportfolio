@@ -1,10 +1,15 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
 .hero {
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
   background-color: #141D2F;
 }
 
@@ -83,7 +88,7 @@
   .email-text {
     font-size: 16px;
     color: #ffffff;
-    font-weight: 400;
+    font-weight: 300;
   }
 }
 
@@ -112,23 +117,29 @@
     font-weight: 300;
     color: #ffffff;
     letter-spacing: 3px;
+    line-height: 1.2;
+    height: calc(128px + 10px + 64px * 1.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .text-content {
-    text-align: center;
+    text-align: left;
 
     .name {
       font-size: 128px;
       font-weight: 800;
       color: #ffffff;
       line-height: 1;
+      white-space: nowrap;
       margin-bottom: 10px;
       letter-spacing: -2px;
     }
 
     .title {
       font-size: 64px;
-      font-weight: 600;
+      font-weight: 300;
       color: var(--accent-green);
       letter-spacing: 8px;
       margin-bottom: 40px;
@@ -138,11 +149,11 @@
       display: block;
       width: fit-content;
       margin: 0 auto;
-      padding: 18px 50px;
+      padding: 8px 50px;
       background-color: var(--accent-green);
       color: var(--primary-bg);
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 300;
       border-radius: 8px;
       transition: all 0.3s ease;
       box-shadow: 0 4px 20px rgba(123, 237, 85, 0.3);
@@ -171,7 +182,7 @@
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-size: 23px;
-    font-weight: 2 00;
+    font-weight: 300;
     letter-spacing: 2px;
   }
 
@@ -206,7 +217,11 @@
 
   .intro {
     .vertical-text {
-      font-size: 22px;
+      font-size: 43px;
+        height: 116px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .text-content {
@@ -228,6 +243,10 @@
     filter: blur(38px);
   }
 
+  .hero{
+    min-height: 94vh;
+  }
+
   .hero-glow-purple {
     height: 350px;
     filter: blur(38px);
@@ -245,7 +264,11 @@
     gap: 20px;
 
     .vertical-text {
-      font-size: 20px;
+     font-size: 40px;
+        height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .text-content {
@@ -253,8 +276,8 @@
         font-size: 60px;
       }
       .title {
-        font-size: 24px;
-        letter-spacing: 4px;
+        font-size: 32px;
+        letter-spacing: 0px;
       }
 
       .cta-btn {
@@ -280,7 +303,12 @@
   }
 
   .hero {
-    min-height: 88vh;
+    min-height: 94dvh;
+    padding: 20px 0 90px;
+  }
+
+  .hero-content {
+    padding: 0 16px;
   }
 
   .social-icons {
@@ -301,36 +329,45 @@
   .intro {
     flex-direction: row;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
 
     .vertical-text {
-      font-size: 18px;
+      font-size: 36px;
       writing-mode: vertical-rl;
       text-orientation: mixed;
       transform: rotate(180deg);
       letter-spacing: 2px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
     }
 
     .text-content {
-      text-align: center;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
 
       .name {
-        font-size: clamp(40px, 11vw, 52px);
+        font-size: clamp(38px, 10.8vw, 56px);
+        line-height: 1.05;
         letter-spacing: -1px;
+        white-space: nowrap;
       }
 
       .title {
-        font-size: clamp(14px, 4vw, 20px);
-        letter-spacing: 2px;
+        font-size: 32px;
+        letter-spacing: 1.8px;
         margin-bottom: 30px;
       }
 
       .cta-btn {
-        display: inline-block;
+        display: block;
+        margin: 0 auto;
+        align-self: center;
         padding: 12px 25px;
         font-size: 16px;
       }
@@ -359,7 +396,11 @@
   }
 
   .hero {
-    min-height: 88vh;
+    min-height: 90dvh;
+  }
+
+  .hero-content {
+    padding: 0 12px;
   }
 
   .social-icons {
@@ -380,38 +421,50 @@
   .intro {
     flex-direction: row;
     justify-content: center;
-    gap: 12px;
-    align-items: center;
+    gap: 8px;
+    align-items: flex-start;
 
     .vertical-text {
-      font-size: 16px;
       writing-mode: vertical-rl;
       text-orientation: mixed;
       transform: rotate(180deg);
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
+      line-height: 1.2;
+      font-size: 24px;
+      height: auto;
+      min-height: calc(clamp(34px, 11vw, 46px) * 1.05 + 24px + clamp(18px, 6.6vw, 30px) * 1.2);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      align-self: flex-start;
+      margin-top: -24px;
     }
 
     .text-content {
-      text-align: center;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
 
       .name {
-        font-size: clamp(32px, 10vw, 45px);
+        font-size: clamp(34px, 11vw, 46px);
+        line-height: 1.05;
         letter-spacing: -1px;
-        word-break: break-word;
+        white-space: nowrap;
+        margin: 0;
       }
 
       .title {
-        font-size: clamp(12px, 4vw, 18px);
-        letter-spacing: 1px;
-        margin-bottom: 30px;
+        font-size: clamp(18px, 6.6vw, 30px);
+        letter-spacing: 1.2px;
+        margin-bottom: 24px;
       }
 
       .cta-btn {
-        display: inline-block;
-        padding: 12px 25px;
+        display: block;
+        margin: 0 auto;
+        align-self: center;
+        padding: 13px 28px;
         font-size: 16px;
       }
     }
