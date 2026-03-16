@@ -34,13 +34,14 @@
     .separator {
       color: var(--text-gray);
       font-size: 16px;
+
     }
   }
 
   .legal-link {
     font-size: 16px;
-    color: var(--text-gray);
     transition: color 0.3s ease;
+     font-weight: 300;
 
     &:hover {
       color: var(--accent-green);
@@ -50,7 +51,7 @@
 
 .copyright {
   font-size: 16px;
-  color: var(--text-gray);
+   font-weight: 300;
 }
 
 .footer-social {
@@ -59,7 +60,6 @@
   gap: 20px;
 
   a {
-    color: #ffffff;
     transition: color 0.3s ease, transform 0.3s ease;
 
     &:hover {
