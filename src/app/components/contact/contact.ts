@@ -4,6 +4,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+/**
+ * Contact component for handling user contact form submissions.
+ * Manages form validation, email sending via Formspree API, and privacy policy link navigation.
+ *
+ * @component
+ * @implements {AfterViewInit}
+ * @implements {OnDestroy}
+ */
 @Component({
   selector: 'app-contact',
   imports: [TranslateModule, CommonModule],
@@ -11,16 +19,38 @@ import { Router } from '@angular/router';
   styleUrl: './contact.scss',
 })
 export class Contact implements AfterViewInit, OnDestroy {
+  /** Event listener for privacy policy link clicks */
   private privacyLinkListener?: (e: Event) => void;
+
+  /** Signal indicating whether form validation warning should be shown */
   showWarning = signal(false);
+
+  /** Signal indicating whether email is currently being sent */
   isSending = signal(false);
+
+  /** Signal indicating whether email was sent successfully */
   sendSuccess = signal(false);
+
+  /** Signal indicating whether email sending failed */
   sendError = signal(false);
 
+  /** Formspree API endpoint URL */
   private apiUrl = 'https://formspree.io/f/xdalaywj';
 
+  /**
+   * Creates an instance of Contact component.
+   *
+   * @param {HttpClient} http - Angular HTTP client for API requests
+   * @param {Router} router - Angular router for navigation
+   */
   constructor(private http: HttpClient, private router: Router) {}
 
+  /**
+   * Angular lifecycle hook that runs after the component's view has been initialized.
+   * Sets up event listener for privacy policy link to enable programmatic navigation.
+   *
+   * @returns {void}
+   */
   ngAfterViewInit(): void {
     // Add click listener for privacy policy link
     setTimeout(() => {
@@ -35,6 +65,12 @@ export class Contact implements AfterViewInit, OnDestroy {
     }, 100);
   }
 
+  /**
+   * Angular lifecycle hook that runs when the component is destroyed.
+   * Removes event listener to prevent memory leaks.
+   *
+   * @returns {void}
+   */
   ngOnDestroy(): void {
     const privacyLabel = document.querySelector('label[for="privacy"] a');
     if (privacyLabel && this.privacyLinkListener) {
@@ -42,6 +78,11 @@ export class Contact implements AfterViewInit, OnDestroy {
     }
   }
 
+  /**
+   * Validates the contact form by checking if all required fields are filled.
+   *
+   * @returns {boolean} True if all fields (name, email, message, privacy) are valid, false otherwise
+   */
   isFormValid(): boolean {
     const name = (document.getElementById('name') as HTMLInputElement)?.value;
     const email = (document.getElementById('email') as HTMLInputElement)?.value;
@@ -51,6 +92,13 @@ export class Contact implements AfterViewInit, OnDestroy {
     return !!(name && email && message && privacy);
   }
 
+  /**
+   * Sends the contact form email via Formspree API.
+   * Validates form before sending, updates loading/success/error states, and clears form on success.
+   *
+   * @async
+   * @returns {Promise<void>} Promise that resolves when the email operation completes
+   */
   async sendEmail(): Promise<void> {
     if (!this.isFormValid()) return;
 
@@ -83,6 +131,13 @@ export class Contact implements AfterViewInit, OnDestroy {
     });
   }
 
+  /**
+   * Handles submit button hover event.
+   * Shows a warning message if form validation fails when user hovers over the button.
+   * Warning automatically disappears after 3 seconds.
+   *
+   * @returns {void}
+   */
   onButtonHover(): void {
     if (!this.isFormValid()) {
       this.showWarning.set(true);
@@ -92,6 +147,11 @@ export class Contact implements AfterViewInit, OnDestroy {
     }
   }
 
+  /**
+   * Scrolls the page to the top with smooth animation.
+   *
+   * @returns {void}
+   */
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
