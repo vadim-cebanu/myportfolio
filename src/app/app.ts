@@ -12,6 +12,12 @@ import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
 import { filter } from 'rxjs/operators';
 
+/**
+ * Root application component managing main layout and navigation.
+ * Handles route changes, section scrolling, and language initialization.
+ *
+ * @component
+ */
 @Component({
   selector: 'app-root',
   imports: [CommonModule, RouterOutlet, Navbar, Hero, About, Skills, Portfolio, Testimonials, Contact, Footer],
@@ -19,9 +25,18 @@ import { filter } from 'rxjs/operators';
   styleUrl: './app.scss'
 })
 export class App {
+  /** Translation service for managing application language */
   private translate = inject(TranslateService);
+
+  /** Flag indicating whether user is on the home page */
   isHomePage = true;
 
+  /**
+   * Creates an instance of App component.
+   * Initializes default language and sets up route change listener.
+   *
+   * @param {Router} router - Angular router for navigation
+   */
   constructor(private router: Router) {
     this.translate.use('en');
 
@@ -33,6 +48,13 @@ export class App {
     });
   }
 
+  /**
+   * Handles navigation link clicks from navbar.
+   * Navigates to home page first if on different page, then scrolls to section.
+   *
+   * @param {string} section - Section ID to scroll to
+   * @returns {void}
+   */
   onNavClick(section: string): void {
     if (!this.isHomePage) {
       this.router.navigate(['/']).then(() => {
@@ -43,6 +65,14 @@ export class App {
     }
   }
 
+  /**
+   * Scrolls to a specific section by ID with smooth animation.
+   * Scrolls to top if section is empty string.
+   *
+   * @private
+   * @param {string} section - Section ID to scroll to, or empty string for top
+   * @returns {void}
+   */
   private scrollToSection(section: string): void {
     if (section === '') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
