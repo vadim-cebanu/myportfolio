@@ -2,16 +2,34 @@ import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * Represents a project in the portfolio.
+ *
+ * @interface Project
+ */
 interface Project {
+  /** Path to the project image */
   image: string;
+  /** Alt text for the project image */
   alt: string;
+  /** GitHub repository URL */
   github: string;
+  /** Live demo URL */
   live: string;
+  /** Translation key for project title */
   titleKey: string;
+  /** Translation key for project description */
   descKey: string;
+  /** Array of technologies used in the project */
   tech: string[];
 }
 
+/**
+ * Portfolio component displaying a carousel of projects.
+ * Features infinite loop carousel with smooth transitions and mobile toggle functionality.
+ *
+ * @component
+ */
 @Component({
   selector: 'app-portfolio',
   imports: [CommonModule, TranslateModule],
@@ -19,10 +37,13 @@ interface Project {
   styleUrl: './portfolio.scss',
 })
 export class Portfolio {
+  /** Duration of carousel transition animation in milliseconds */
   private readonly transitionDurationMs = 450;
 
+  /** Signal tracking which project is currently active on mobile */
   activeProject = signal<number | null>(null);
 
+  /** Array of portfolio projects to display */
   readonly projects: Project[] = [
     {
       image: 'img/pokedex.png',
@@ -53,35 +74,72 @@ export class Portfolio {
     },
   ];
 
+  /** Computed signal that creates infinite loop by adding clones at start and end */
   readonly loopItems = computed(() => [
     this.projects[this.projects.length - 1],
     ...this.projects,
     this.projects[0],
   ]);
 
+  /** Signal tracking current carousel slide position */
   currentSlide = signal(1);
+
+  /** Signal controlling whether CSS transitions are enabled */
   transitionEnabled = signal(true);
 
+  /**
+   * Gets the array of visible items including loop clones.
+   *
+   * @returns {Project[]} Array of projects with clones for infinite loop
+   */
   get visibleItems() {
     return this.loopItems();
   }
 
+  /**
+   * Gets the total number of actual projects (excluding clones).
+   *
+   * @returns {number} Number of projects
+   */
   get slidesCount() {
     return this.projects.length;
   }
 
+  /**
+   * Navigates to the previous project in carousel.
+   *
+   * @returns {void}
+   */
   prev() {
     this.slideTo(this.currentSlide() - 1);
   }
 
+  /**
+   * Navigates to the next project in carousel.
+   *
+   * @returns {void}
+   */
   next() {
     this.slideTo(this.currentSlide() + 1);
   }
 
+  /**
+   * Navigates to a specific project by index.
+   *
+   * @param {number} index - Zero-based index of the project
+   * @returns {void}
+   */
   goTo(index: number) {
     this.slideTo(index + 1);
   }
 
+  /**
+   * Toggles project details visibility on mobile devices.
+   * No effect on desktop (viewport > 992px).
+   *
+   * @param {number} index - Index of the project to toggle
+   * @returns {void}
+   */
   toggleProject(index: number) {
     if (!this.isMobile()) {
       return;
@@ -90,10 +148,24 @@ export class Portfolio {
     this.activeProject.update(current => (current === index ? null : index));
   }
 
+  /**
+   * Checks if current viewport is mobile size.
+   *
+   * @private
+   * @returns {boolean} True if viewport width is 992px or less
+   */
   private isMobile(): boolean {
     return window.matchMedia('(max-width: 992px)').matches;
   }
 
+  /**
+   * Slides carousel to specified position with infinite loop logic.
+   * Handles wrapping from clone slides to real slides seamlessly.
+   *
+   * @private
+   * @param {number} position - Target slide position
+   * @returns {void}
+   */
   private slideTo(position: number) {
     this.transitionEnabled.set(true);
     this.currentSlide.set(position);
