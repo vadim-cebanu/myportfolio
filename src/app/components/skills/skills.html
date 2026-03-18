@@ -73,11 +73,27 @@
         <span class="skill-name">Material Design</span>
       </div>
 
-      <div class="skill-item highlight">
+      <div class="skill-item highlight" (mouseenter)="openLearningModal()" (mouseleave)="closeLearningModal()">
         <div class="skill-icon">
           <img src="img/Continually learning.png" alt="Continually learning">
         </div>
         <span class="skill-name">{{ 'skills.continuallyLearning' | translate }}</span>
+
+        <div class="learning-tooltip" [class.open]="showLearningModal()">
+          <h3 class="tooltip-title">{{ 'skills.learningModalTitle' | translate }}</h3>
+
+          <div class="certificates-grid">
+            <div class="certificate-item">
+              <img src="img/React.svg" alt="React">
+              <p class="certificate-name">{{ 'skills.reactCertificate' | translate }}</p>
+            </div>
+
+            <div class="certificate-item">
+              <img src="img/Group 17.svg" alt="Vue.js">
+              <p class="certificate-name">{{ 'skills.vueCertificate' | translate }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -101,4 +117,6 @@
         <a href="#contact" class="cta-btn" (click)="scrollToContact($event)">{{ 'skills.getInTouch' | translate }}</a>
       </div>
     </div>
+  </div>
+</section>
 

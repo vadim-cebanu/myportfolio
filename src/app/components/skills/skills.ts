@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 /**
  * Skills section component displaying technology stack and competencies.
@@ -9,11 +10,27 @@ import { TranslateModule } from '@ngx-translate/core';
  */
 @Component({
   selector: 'app-skills',
-  imports: [TranslateModule],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })
 export class Skills {
+  /** Signal to control modal visibility */
+  showLearningModal = signal(false);
+
+  /**
+   * Opens the learning modal to display certifications.
+   */
+  openLearningModal(): void {
+    this.showLearningModal.set(true);
+  }
+
+  /**
+   * Closes the learning modal.
+   */
+  closeLearningModal(): void {
+    this.showLearningModal.set(false);
+  }
 
   /**
    * Scrolls smoothly to the contact section.
