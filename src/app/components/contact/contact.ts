@@ -34,6 +34,17 @@ export class Contact implements AfterViewInit, OnDestroy {
   /** Signal indicating whether email sending failed */
   sendError = signal(false);
 
+  /** Validation signals for each field */
+  nameTouched = signal(false);
+  emailTouched = signal(false);
+  messageTouched = signal(false);
+  privacyTouched = signal(false);
+
+  nameValid = signal(false);
+  emailValid = signal(false);
+  messageValid = signal(false);
+  privacyValid = signal(false);
+
   /** Formspree API endpoint URL */
   private apiUrl = 'https://formspree.io/f/xdalaywj';
 
@@ -79,17 +90,45 @@ export class Contact implements AfterViewInit, OnDestroy {
   }
 
   /**
+   * Validates name field
+   */
+  validateName(value: string): void {
+    this.nameTouched.set(true);
+    this.nameValid.set(value.trim().length > 0);
+  }
+
+  /**
+   * Validates email field
+   */
+  validateEmail(value: string): void {
+    this.emailTouched.set(true);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    this.emailValid.set(emailRegex.test(value));
+  }
+
+  /**
+   * Validates message field
+   */
+  validateMessage(value: string): void {
+    this.messageTouched.set(true);
+    this.messageValid.set(value.trim().length > 0);
+  }
+
+  /**
+   * Validates privacy checkbox
+   */
+  validatePrivacy(checked: boolean): void {
+    this.privacyTouched.set(true);
+    this.privacyValid.set(checked);
+  }
+
+  /**
    * Validates the contact form by checking if all required fields are filled.
    *
    * @returns {boolean} True if all fields (name, email, message, privacy) are valid, false otherwise
    */
   isFormValid(): boolean {
-    const name = (document.getElementById('name') as HTMLInputElement)?.value;
-    const email = (document.getElementById('email') as HTMLInputElement)?.value;
-    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value;
-    const privacy = (document.getElementById('privacy') as HTMLInputElement)?.checked;
-
-    return !!(name && email && message && privacy);
+    return this.nameValid() && this.emailValid() && this.messageValid() && this.privacyValid();
   }
 
   /**
@@ -100,11 +139,24 @@ export class Contact implements AfterViewInit, OnDestroy {
    * @returns {Promise<void>} Promise that resolves when the email operation completes
    */
   async sendEmail(): Promise<void> {
-    if (!this.isFormValid()) return;
+    // Mark all fields as touched for validation display
+    this.nameTouched.set(true);
+    this.emailTouched.set(true);
+    this.messageTouched.set(true);
+    this.privacyTouched.set(true);
 
     const name = (document.getElementById('name') as HTMLInputElement)?.value;
     const email = (document.getElementById('email') as HTMLInputElement)?.value;
     const message = (document.getElementById('message') as HTMLTextAreaElement)?.value;
+    const privacy = (document.getElementById('privacy') as HTMLInputElement)?.checked;
+
+    // Validate all fields
+    this.validateName(name);
+    this.validateEmail(email);
+    this.validateMessage(message);
+    this.validatePrivacy(privacy);
+
+    if (!this.isFormValid()) return;
 
     this.isSending.set(true);
     this.sendError.set(false);
@@ -123,6 +175,15 @@ export class Contact implements AfterViewInit, OnDestroy {
         (document.getElementById('email') as HTMLInputElement).value = '';
         (document.getElementById('message') as HTMLTextAreaElement).value = '';
         (document.getElementById('privacy') as HTMLInputElement).checked = false;
+        // Reset validation states
+        this.nameTouched.set(false);
+        this.emailTouched.set(false);
+        this.messageTouched.set(false);
+        this.privacyTouched.set(false);
+        this.nameValid.set(false);
+        this.emailValid.set(false);
+        this.messageValid.set(false);
+        this.privacyValid.set(false);
       },
       error: () => {
         this.isSending.set(false);

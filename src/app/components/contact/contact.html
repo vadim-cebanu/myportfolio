@@ -18,19 +18,86 @@
       </div>
 
       <form class="contact-form" (submit)="$event.preventDefault(); sendEmail()">
-        <div class="form-group">
-          <input type="text" id="name" [placeholder]="'contact.yourName' | translate" required>
+        <div class="form-group" [class.error]="nameTouched() && !nameValid()" [class.valid]="nameTouched() && nameValid()">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="name"
+              [placeholder]="'contact.yourName' | translate"
+              (blur)="validateName($any($event.target).value)"
+              (input)="validateName($any($event.target).value)">
+            @if (nameTouched()) {
+              @if (nameValid()) {
+                <span class="validation-icon valid">✓</span>
+              } @else {
+                <span class="validation-icon error">✕</span>
+              }
+            }
+          </div>
+          @if (nameTouched() && !nameValid()) {
+            <span class="error-message">{{ 'contact.nameRequired' | translate }}</span>
+          }
         </div>
-        <div class="form-group">
-          <input type="email" id="email" [placeholder]="'contact.yourEmail' | translate" required>
+
+        <div class="form-group" [class.error]="emailTouched() && !emailValid()" [class.valid]="emailTouched() && emailValid()">
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              [placeholder]="'contact.yourEmail' | translate"
+              (blur)="validateEmail($any($event.target).value)"
+              (input)="validateEmail($any($event.target).value)">
+            @if (emailTouched()) {
+              @if (emailValid()) {
+                <span class="validation-icon valid">✓</span>
+              } @else {
+                <span class="validation-icon error">✕</span>
+              }
+            }
+          </div>
+          @if (emailTouched() && !emailValid()) {
+            <span class="error-message">{{ 'contact.emailInvalid' | translate }}</span>
+          }
         </div>
-        <div class="form-group">
-          <textarea id="message" [placeholder]="'contact.yourMessage' | translate" rows="5" required></textarea>
+
+        <div class="form-group" [class.error]="messageTouched() && !messageValid()" [class.valid]="messageTouched() && messageValid()">
+          <div class="input-wrapper">
+            <textarea
+              id="message"
+              [placeholder]="'contact.yourMessage' | translate"
+              rows="5"
+              (blur)="validateMessage($any($event.target).value)"
+              (input)="validateMessage($any($event.target).value)"></textarea>
+            @if (messageTouched()) {
+              @if (messageValid()) {
+                <span class="validation-icon valid">✓</span>
+              } @else {
+                <span class="validation-icon error">✕</span>
+              }
+            }
+          </div>
+          @if (messageTouched() && !messageValid()) {
+            <span class="error-message">{{ 'contact.messageRequired' | translate }}</span>
+          }
         </div>
-        <div class="form-group checkbox">
-          <input type="checkbox" id="privacy" required>
+
+        <div class="form-group checkbox" [class.error]="privacyTouched() && !privacyValid()">
+          <input
+            type="checkbox"
+            id="privacy"
+            (change)="validatePrivacy($any($event.target).checked)">
           <label for="privacy" [innerHTML]="'contact.privacyLabel' | translate"></label>
+          @if (privacyTouched()) {
+            @if (privacyValid()) {
+              <span class="validation-icon valid">✓</span>
+            } @else {
+              <span class="validation-icon error">✕</span>
+            }
+          }
         </div>
+        @if (privacyTouched() && !privacyValid()) {
+          <span class="error-message checkbox-error">{{ 'contact.privacyRequired' | translate }}</span>
+        }
         <div class="button-container">
           <button type="submit" class="submit-btn" [disabled]="isSending()" (mouseenter)="onButtonHover()">
             @if (isSending()) {
@@ -39,7 +106,7 @@
               {{ 'contact.sendMessage' | translate }}
             }
           </button>
-          
+
           @if (sendSuccess()) {
             <div class="success-message">✅ {{ 'contact.success' | translate }}</div>
           }
