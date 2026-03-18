@@ -26,7 +26,10 @@
     "anotherSkillTitle": "Looking for <span class='highlight-text'>another skill</span>?",
     "anotherSkillText": "Feel free to contact me. I am open to learning new technologies and frameworks to meet your project needs.",
     "getInTouch": "Get in touch",
-    "continuallyLearning": "Continually learning"
+    "continuallyLearning": "Continually learning",
+    "learningModalTitle": "I have a special interest in learning",
+    "reactCertificate": "React",
+    "vueCertificate": "Vue.js"
   },
   "portfolio": {
     "title": "Portfolio",
@@ -62,9 +65,47 @@
     "sendMessage": "Send message :)",
     "sending": "Sending...",
     "success": "Message sent successfully!",
-    "error": "Failed to send message. Please try again."
+    "error": "Failed to send message. Please try again.",
+    "nameRequired": "Your name is required",
+    "emailRequired": "Your email is required",
+    "emailInvalid": "Please enter a valid email",
+    "messageRequired": "Your message is required",
+    "privacyRequired": "You must agree to the processing of your data as outlined."
   },
   "footer": {
     "legalNotice": "Legal Notice"
+  },
+  "privacy": {
+    "back": "Back",
+    "title": "Privacy Policy",
+    "informationHeading": "Information according to § 5 TMG",
+    "contactHeading": "Contact",
+    "email": "Email",
+    "responsibleHeading": "Responsible for content according to § 55 Abs. 2 RStV",
+    "euDisputeHeading": "EU Dispute Resolution",
+    "euDisputeText": "The European Commission provides a platform for online dispute resolution (OS): <a href='https://ec.europa.eu/consumers/odr' class='link' target='_blank'>https://ec.europa.eu/consumers/odr</a>",
+    "emailInImprint": "Our email address can be found above in the imprint.",
+    "consumerDisputeHeading": "Consumer Dispute Resolution",
+    "consumerDisputeText": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
+    "date": "Date"
+  },
+  "legal": {
+    "back": "Back",
+    "title": "Legal Notice",
+    "acceptanceHeading": "Acceptance of terms",
+    "acceptanceText": "By accessing and using this Portfolio, you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time.",
+    "scopeHeading": "Scope and ownership of the product",
+    "scopeText1": "This Portfolio has been developed as part of a web development project at the <a href='https://developerakademie.com' class='link' target='_blank'>Developer Akademie GmbH</a>. It has an educational purpose and is not intended for extensive personal & business usage.",
+    "scopeText2": "The design of this Portfolio is owned by the <a href='https://developerakademie.com' class='link' target='_blank'>Developer Akademie GmbH</a>. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.",
+    "proprietaryHeading": "Proprietary rights",
+    "proprietaryText": "Aside from the design owned by Developer Akademie GmbH, I retain all proprietary rights in this Portfolio, including any associated copyrighted material, trademarks, and other proprietary information.",
+    "useHeading": "Use of the product",
+    "useText": "This Portfolio is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use for illegal activities is strictly prohibited.",
+    "disclaimerHeading": "Disclaimer of warranties and limitation of liability",
+    "disclaimerText": "This Portfolio is provided \"as is\" without warranty of any kind, express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.",
+    "indemnityHeading": "Indemnity",
+    "indemnityText": "You agree to indemnify, defend and hold harmless the owner of this Portfolio from and against any claim, demand, loss, damage, cost, or liability arising out of or relating to your use of this Portfolio.",
+    "questionsText": "For any questions or notices, please contact me at info@vadimcebanu.dev",
+    "date": "Date"
   }
 }

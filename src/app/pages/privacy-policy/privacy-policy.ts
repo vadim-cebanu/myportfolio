@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * Privacy policy page component.
@@ -9,7 +10,7 @@ import { RouterLink } from '@angular/router';
  */
 @Component({
   selector: 'app-privacy-policy',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslateModule],
   templateUrl: './privacy-policy.html',
   styleUrl: './privacy-policy.scss',
 })

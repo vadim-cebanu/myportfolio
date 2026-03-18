@@ -6,7 +6,7 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "iAm": "Ich bin",
+    "iAm": "I am",
     "title": "FRONTEND ENTWICKLER",
     "letsTalk": "Lass uns reden!",
     "scrollDown": "Nach unten scrollen"
@@ -26,7 +26,10 @@
     "anotherSkillTitle": "Suchen Sie eine <span class='highlight-text'>weitere Fähigkeit</span>?",
     "anotherSkillText": "Kontaktieren Sie mich gerne. Ich bin offen für das Erlernen neuer Technologien und Frameworks, um Ihre Projektanforderungen zu erfüllen.",
     "getInTouch": "Kontakt aufnehmen",
-    "continuallyLearning": "Ständig lernend"
+    "continuallyLearning": "Ständig lernend",
+    "learningModalTitle": "Ich habe ein besonderes Interesse am Lernen",
+    "reactCertificate": "React",
+    "vueCertificate": "Vue.js"
   },
   "portfolio": {
     "title": "Portfolio",
@@ -62,9 +65,47 @@
     "sendMessage": "Nachricht senden :)",
     "sending": "Wird gesendet...",
     "success": "Nachricht erfolgreich gesendet!",
-    "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+    "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+    "nameRequired": "Ihr Name ist erforderlich",
+    "emailRequired": "Ihre E-Mail ist erforderlich",
+    "emailInvalid": "Bitte geben Sie eine gültige E-Mail ein",
+    "messageRequired": "Ihre Nachricht ist erforderlich",
+    "privacyRequired": "Sie müssen der Verarbeitung Ihrer Daten wie beschrieben zustimmen."
   },
   "footer": {
     "legalNotice": "Impressum"
+  },
+  "privacy": {
+    "back": "Zurück",
+    "title": "Datenschutzerklärung",
+    "informationHeading": "Angaben gemäß § 5 TMG",
+    "contactHeading": "Kontakt",
+    "email": "E-Mail",
+    "responsibleHeading": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+    "euDisputeHeading": "EU-Streitschlichtung",
+    "euDisputeText": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href='https://ec.europa.eu/consumers/odr' class='link' target='_blank'>https://ec.europa.eu/consumers/odr</a>",
+    "emailInImprint": "Unsere E-Mail-Adresse finden Sie oben im Impressum.",
+    "consumerDisputeHeading": "Verbraucherstreitbeilegung",
+    "consumerDisputeText": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+    "date": "Datum"
+  },
+  "legal": {
+    "back": "Zurück",
+    "title": "Impressum",
+    "acceptanceHeading": "Annahme der Bedingungen",
+    "acceptanceText": "Durch den Zugriff auf und die Nutzung dieses Portfolios erkennen Sie die folgenden Geschäftsbedingungen sowie alle Richtlinien, Leitlinien oder Änderungen an, die Ihnen von Zeit zu Zeit vorgelegt werden können.",
+    "scopeHeading": "Umfang und Eigentum am Produkt",
+    "scopeText1": "Dieses Portfolio wurde im Rahmen eines Webentwicklungsprojekts bei der <a href='https://developerakademie.com' class='link' target='_blank'>Developer Akademie GmbH</a> entwickelt. Es dient Bildungszwecken und ist nicht für eine umfangreiche persönliche oder geschäftliche Nutzung vorgesehen.",
+    "scopeText2": "Das Design dieses Portfolios ist Eigentum der <a href='https://developerakademie.com' class='link' target='_blank'>Developer Akademie GmbH</a>. Die unbefugte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Nachahmung des Designs ist strengstens untersagt.",
+    "proprietaryHeading": "Eigentumsrechte",
+    "proprietaryText": "Abgesehen vom Design, das im Eigentum der Developer Akademie GmbH steht, behalte ich alle Eigentumsrechte an diesem Portfolio, einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und anderen proprietären Informationen.",
+    "useHeading": "Nutzung des Produkts",
+    "useText": "Dieses Portfolio ist ausschließlich für rechtmäßige Zwecke und in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften zu verwenden. Jede Nutzung für illegale Aktivitäten ist strengstens untersagt.",
+    "disclaimerHeading": "Haftungsausschluss und Haftungsbeschränkung",
+    "disclaimerText": "Dieses Portfolio wird \"wie besehen\" ohne jegliche Gewährleistung bereitgestellt, weder ausdrücklich noch stillschweigend, einschließlich, aber nicht beschränkt auf stillschweigende Gewährleistungen der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung von Rechten Dritter.",
+    "indemnityHeading": "Schadloshaltung",
+    "indemnityText": "Sie verpflichten sich, den Eigentümer dieses Portfolios von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen freizustellen, zu verteidigen und schadlos zu halten, die sich aus oder im Zusammenhang mit Ihrer Nutzung dieses Portfolios ergeben.",
+    "questionsText": "Für Fragen oder Mitteilungen kontaktieren Sie mich bitte unter info@vadimcebanu.dev",
+    "date": "Datum"
   }
 }
