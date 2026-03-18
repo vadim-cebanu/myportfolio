@@ -57,7 +57,7 @@
 
 .social-icons {
   position: absolute;
-  left: 80px;
+  left: max(80px, calc((100vw - 1440px) / 2 + 80px));
   bottom: 50px;
   display: flex;
   align-items: center;
@@ -169,7 +169,7 @@
 
 .scroll-indicator {
   position: absolute;
-  right: 80px;
+  right: max(80px, calc((100vw - 1440px) / 2 + 80px));
   bottom: 50px;
   display: flex;
   flex-direction: column;
