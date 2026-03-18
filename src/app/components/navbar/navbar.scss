@@ -176,10 +176,14 @@
 @media (max-width: 992px) {
   .navbar {
     padding: 25px 30px;
-    position: relative;
+    position: fixed;
 
     &.scrolled {
       padding: 15px 30px;
+    }
+
+    &.hidden {
+      transform: translateY(0);
     }
 
     .hamburger {

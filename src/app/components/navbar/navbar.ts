@@ -49,8 +49,8 @@ export class Navbar implements OnDestroy {
   toggleMenu(): void {
     this.isMenuOpen.update(v => {
       const next = !v;
-      if (this.isMobile() && next) {
-        this.setBodyScrollEnabled(false);
+      if (this.isMobile()) {
+        this.setBodyScrollEnabled(!next);
       }
       return next;
     });
@@ -63,7 +63,9 @@ export class Navbar implements OnDestroy {
    */
   closeMenu(): void {
     this.isMenuOpen.set(false);
-    this.setBodyScrollEnabled(true);
+    if (this.isMobile()) {
+      this.setBodyScrollEnabled(true);
+    }
   }
 
   /**
@@ -129,6 +131,7 @@ export class Navbar implements OnDestroy {
   /**
    * Window scroll event handler.
    * Manages navbar visibility and scroll state based on scroll position and direction.
+   * On mobile, navbar is always visible (never hidden).
    *
    * @returns {void}
    */
@@ -137,6 +140,13 @@ export class Navbar implements OnDestroy {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
     this.isScrolled.set(currentScroll > 50);
+
+    // On mobile, navbar should always be visible
+    if (this.isMobile()) {
+      this.isHidden.set(false);
+      this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      return;
+    }
 
     if (currentScroll > this.scrollThreshold) {
       if (currentScroll > this.lastScrollTop) {
