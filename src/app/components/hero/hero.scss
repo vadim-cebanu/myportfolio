@@ -57,7 +57,7 @@
 
 .social-icons {
   position: absolute;
-  left: max(80px, calc((100vw - 1440px) / 2 + 80px));
+  left: max(100px, calc((100vw - 1440px) / 2));
   bottom: 50px;
   display: flex;
   align-items: center;
@@ -113,12 +113,13 @@
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
-    font-size: 90px;
+    font-size: 54px;
     font-weight: 300;
     color: #ffffff;
     letter-spacing: 3px;
     line-height: 1.2;
     height: calc(128px + 10px + 64px * 1.2);
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,12 +193,19 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(5px);
   }
+
   60% {
     transform: translateY(3px);
   }
@@ -218,7 +226,7 @@
   .intro {
     .vertical-text {
       font-size: 43px;
-        height: 116px;
+      height: 116px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -228,6 +236,7 @@
       .name {
         font-size: 70px;
       }
+
       .title {
         font-size: 28px;
         letter-spacing: 5px;
@@ -243,7 +252,7 @@
     filter: blur(38px);
   }
 
-  .hero{
+  .hero {
     min-height: 94vh;
   }
 
@@ -264,8 +273,8 @@
     gap: 20px;
 
     .vertical-text {
-     font-size: 40px;
-        height: 115px;
+      font-size: 26px;
+      height: 115px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -275,6 +284,7 @@
       .name {
         font-size: 60px;
       }
+
       .title {
         font-size: 32px;
         letter-spacing: 0px;
@@ -333,7 +343,7 @@
     align-items: center;
 
     .vertical-text {
-      font-size: 36px;
+      font-size: 26px;
       writing-mode: vertical-rl;
       text-orientation: mixed;
       transform: rotate(180deg);
@@ -380,6 +390,7 @@
 }
 
 @media (max-width: 480px) {
+
   .hero-glow-cyan,
   .hero-glow-purple {
     height: 200px;
@@ -387,12 +398,12 @@
     opacity: 0.5;
   }
 
-  .hero-glow-cyan{
-    top:50%;
+  .hero-glow-cyan {
+    top: 50%;
   }
 
-  .hero-glow-purple{
-    right:0%;
+  .hero-glow-purple {
+    right: 0%;
   }
 
   .hero {
@@ -430,7 +441,7 @@
       transform: rotate(180deg);
       letter-spacing: 1.5px;
       line-height: 1.2;
-      font-size: 24px;
+      font-size: 16px;
       height: auto;
       min-height: calc(clamp(34px, 11vw, 46px) * 1.05 + 24px + clamp(18px, 6.6vw, 30px) * 1.2);
       display: flex;
