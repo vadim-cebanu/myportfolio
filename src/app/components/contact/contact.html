@@ -26,13 +26,6 @@
               [placeholder]="'contact.yourName' | translate"
               (blur)="validateName($any($event.target).value)"
               (input)="validateName($any($event.target).value)">
-            @if (nameTouched()) {
-              @if (nameValid()) {
-                <span class="validation-icon valid">✓</span>
-              } @else {
-                <span class="validation-icon error">✕</span>
-              }
-            }
           </div>
           @if (nameTouched() && !nameValid()) {
             <span class="error-message">{{ 'contact.nameRequired' | translate }}</span>
@@ -47,13 +40,6 @@
               [placeholder]="'contact.yourEmail' | translate"
               (blur)="validateEmail($any($event.target).value)"
               (input)="validateEmail($any($event.target).value)">
-            @if (emailTouched()) {
-              @if (emailValid()) {
-                <span class="validation-icon valid">✓</span>
-              } @else {
-                <span class="validation-icon error">✕</span>
-              }
-            }
           </div>
           @if (emailTouched() && !emailValid()) {
             <span class="error-message">{{ 'contact.emailInvalid' | translate }}</span>
@@ -68,13 +54,6 @@
               rows="5"
               (blur)="validateMessage($any($event.target).value)"
               (input)="validateMessage($any($event.target).value)"></textarea>
-            @if (messageTouched()) {
-              @if (messageValid()) {
-                <span class="validation-icon valid">✓</span>
-              } @else {
-                <span class="validation-icon error">✕</span>
-              }
-            }
           </div>
           @if (messageTouched() && !messageValid()) {
             <span class="error-message">{{ 'contact.messageRequired' | translate }}</span>
@@ -87,19 +66,12 @@
             id="privacy"
             (change)="validatePrivacy($any($event.target).checked)">
           <label for="privacy" [innerHTML]="'contact.privacyLabel' | translate"></label>
-          @if (privacyTouched()) {
-            @if (privacyValid()) {
-              <span class="validation-icon valid">✓</span>
-            } @else {
-              <span class="validation-icon error">✕</span>
-            }
-          }
         </div>
         @if (privacyTouched() && !privacyValid()) {
           <span class="error-message checkbox-error">{{ 'contact.privacyRequired' | translate }}</span>
         }
         <div class="button-container">
-          <button type="submit" class="submit-btn" [disabled]="isSending()" (mouseenter)="onButtonHover()">
+          <button type="submit" class="submit-btn" [disabled]="isSending() || !isFormValid()" (mouseenter)="onButtonHover()">
             @if (isSending()) {
               {{ 'contact.sending' | translate }}
             } @else {

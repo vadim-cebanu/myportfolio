@@ -239,6 +239,8 @@
   .button-container {
     position: relative;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
   }
 
   .warning-message {
@@ -292,12 +294,12 @@
   .error-message {
     margin-top: 15px;
     padding: 12px 20px;
-    background: rgba(255, 107, 107, 0.15);
-    border: 1px solid #ff6b6b;
     border-radius: 8px;
     color: #ff6b6b;
     font-size: 14px;
     text-align: center;
+    font-weight: 300;
+
   }
 
   .submit-btn {
@@ -313,9 +315,17 @@
     box-shadow: 0 4px 20px rgba(123, 237, 85, 0.3);
     position: relative;
 
-    &:hover {
+    &:hover:not(:disabled) {
       transform: translateY(-3px);
       box-shadow: 0 8px 30px rgba(123, 237, 85, 0.4);
+    }
+
+    &:disabled {
+      background-color: #4a5568;
+      color: #9ca3af;
+      cursor: not-allowed;
+      box-shadow: none;
+      opacity: 0.6;
     }
   }
 }
@@ -333,12 +343,6 @@
 
   &:hover {
     transform: translateY(-5px);
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 }
 
