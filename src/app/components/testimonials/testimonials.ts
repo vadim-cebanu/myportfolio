@@ -33,7 +33,7 @@ export class Testimonials {
     {
       quoteKey: 'testimonials.quote1',
       authorKey: 'testimonials.author1',
-      image: 'img/my.png',
+      image: 'img/benjaminblarr.png',
     },
     {
       quoteKey: 'testimonials.quote2',
