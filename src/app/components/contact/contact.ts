@@ -184,6 +184,7 @@ export class Contact implements AfterViewInit, OnDestroy {
         this.emailValid.set(false);
         this.messageValid.set(false);
         this.privacyValid.set(false);
+        setTimeout(() => this.sendSuccess.set(false), 2000);
       },
       error: () => {
         this.isSending.set(false);

@@ -38,12 +38,12 @@ export class Testimonials {
     {
       quoteKey: 'testimonials.quote2',
       authorKey: 'testimonials.author2',
-      image: 'img/my.png',
+      image: 'img/IMG_7233.jpg',
     },
     {
       quoteKey: 'testimonials.quote3',
       authorKey: 'testimonials.author3',
-      image: 'img/my.png',
+      image: 'img/gregor-placeholder.svg',
     },
   ];
 

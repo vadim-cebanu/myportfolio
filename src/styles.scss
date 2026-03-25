@@ -83,20 +83,6 @@ body {
   --text-gray: #8892b0;
 }
 
-@keyframes pulseLine {
-  0%, 100% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(0.3);
-  }
-}
-
-.title-line {
-  animation: pulseLine 2s ease-in-out infinite;
-  transform-origin: center;
-}
-
 a {
   text-decoration: none;
   color: inherit;
