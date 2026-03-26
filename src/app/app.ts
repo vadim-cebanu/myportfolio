@@ -10,6 +10,7 @@ import { Portfolio } from './components/portfolio/portfolio';
 import { Testimonials } from './components/testimonials/testimonials';
 import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
+import { PrivacyModal } from './pages/privacy-modal/privacy-modal';
 import { filter } from 'rxjs/operators';
 
 /**
@@ -20,7 +21,7 @@ import { filter } from 'rxjs/operators';
  */
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, Navbar, Hero, About, Skills, Portfolio, Testimonials, Contact, Footer],
+  imports: [CommonModule, RouterOutlet, Navbar, Hero, About, Skills, Portfolio, Testimonials, Contact, Footer, PrivacyModal],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -44,7 +45,13 @@ export class App {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.isHomePage = event.urlAfterRedirects === '/' || event.urlAfterRedirects === '';
-      window.scrollTo(0, 0);
+
+      // Scroll to top on route change - works across all browsers and devices
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 0);
     });
   }
 
