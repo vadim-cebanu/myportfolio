@@ -1,0 +1,43 @@
+@if (isOpen()) {
+  <div class="modal-backdrop" (click)="onBackdropClick($event)">
+    <div class="modal-content">
+      <button class="close-btn" (click)="closeModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="modal-body">
+        <h1 class="modal-title">{{ 'privacy.title' | translate }}</h1>
+
+        <div class="modal-scroll">
+          <h2 class="section-heading">{{ 'privacy.informationHeading' | translate }}</h2>
+          <ul>
+            <li>Vadim Cebanu</li>
+            <li>Sonnentaustrasse 21</li>
+            <li>26670, Uplengen</li>
+          </ul>
+
+          <h2 class="section-heading">{{ 'privacy.contactHeading' | translate }}</h2>
+          <p class="highlight-text">{{ 'privacy.email' | translate }}: info&#64;vadimcebanu.dev</p>
+
+          <h2 class="section-heading">{{ 'privacy.responsibleHeading' | translate }}</h2>
+          <ul>
+            <li>Vadim Cebanu</li>
+            <li>Sonnentaustrasse 21</li>
+            <li>26670, Uplengen</li>
+          </ul>
+
+          <h2 class="section-heading">{{ 'privacy.euDisputeHeading' | translate }}</h2>
+          <p [innerHTML]="'privacy.euDisputeText' | translate"></p>
+          <p>{{ 'privacy.emailInImprint' | translate }}</p>
+
+          <h2 class="section-heading">{{ 'privacy.consumerDisputeHeading' | translate }}</h2>
+          <p>{{ 'privacy.consumerDisputeText' | translate }}</p>
+
+          <p class="date">{{ 'privacy.date' | translate }}: February 5, 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+}
