@@ -61,7 +61,7 @@
     "yourName": "Your name",
     "yourEmail": "Your email",
     "yourMessage": "Your message",
-    "privacyLabel": "I've read the <a href='/#/privacy'>privacy policy</a> and agree to the processing of my data as outlined.",
+    "privacyLabel": "I've read the <a class='privacy-link'>privacy policy</a> and agree to the processing of my data as outlined.",
     "sendMessage": "Send message :)",
     "sending": "Sending...",
     "success": "Message sent successfully!",
@@ -87,7 +87,8 @@
     "emailInImprint": "Our email address can be found above in the imprint.",
     "consumerDisputeHeading": "Consumer Dispute Resolution",
     "consumerDisputeText": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
-    "date": "Date"
+    "date": "Date",
+    "dateValue": "February 5, 2026"
   },
   "legal": {
     "back": "Back",

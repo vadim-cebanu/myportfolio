@@ -25,31 +25,6 @@ export class PrivacyModal {
   /** Event emitted when modal should be closed */
   close = output<void>();
 
-  /** Saved scroll position */
-  private scrollPosition = 0;
-
-  constructor() {
-    effect(() => {
-      if (this.isOpen()) {
-        // Save current scroll position
-        this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Prevent body scroll
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${this.scrollPosition}px`;
-        document.body.style.width = '100%';
-      } else {
-        // Restore body scroll
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-
-        // Restore scroll position
-        window.scrollTo(0, this.scrollPosition);
-      }
-    });
-  }
-
   /**
    * Closes the modal
    */

@@ -61,7 +61,7 @@
     "yourName": "Ihr Name",
     "yourEmail": "Ihre E-Mail",
     "yourMessage": "Ihre Nachricht",
-    "privacyLabel": "Ich habe die <a href='/#/privacy'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "privacyLabel": "Ich habe die <a class='privacy-link'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
     "sendMessage": "Nachricht senden :)",
     "sending": "Wird gesendet...",
     "success": "Nachricht erfolgreich gesendet!",
@@ -87,7 +87,8 @@
     "emailInImprint": "Unsere E-Mail-Adresse finden Sie oben im Impressum.",
     "consumerDisputeHeading": "Verbraucherstreitbeilegung",
     "consumerDisputeText": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
-    "date": "Datum"
+    "date": "Datum",
+    "dateValue": "5. Februar 2026"
   },
   "legal": {
     "back": "Zurück",

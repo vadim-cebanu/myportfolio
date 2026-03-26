@@ -227,10 +227,15 @@
           color: var(--glow-purple);
           text-decoration: underline;
           transition: color 0.3s ease;
+          cursor: pointer;
 
           &:hover {
             color: var(--accent-green);
           }
+        }
+
+        ::ng-deep .privacy-link {
+          cursor: pointer;
         }
       }
     }
