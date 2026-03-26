@@ -1,8 +1,8 @@
-import { Component, signal, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, signal, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { PrivacyModalService } from '../../services/privacy-modal.service';
 
 /**
  * Contact component for handling user contact form submissions.
@@ -19,6 +19,9 @@ import { Router } from '@angular/router';
   styleUrl: './contact.scss',
 })
 export class Contact implements AfterViewInit, OnDestroy {
+  /** Privacy modal service */
+  private modalService = inject(PrivacyModalService);
+
   /** Event listener for privacy policy link clicks */
   private privacyLinkListener?: (e: Event) => void;
 
@@ -52,9 +55,8 @@ export class Contact implements AfterViewInit, OnDestroy {
    * Creates an instance of Contact component.
    *
    * @param {HttpClient} http - Angular HTTP client for API requests
-   * @param {Router} router - Angular router for navigation
    */
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
   /**
    * Angular lifecycle hook that runs after the component's view has been initialized.
@@ -69,7 +71,7 @@ export class Contact implements AfterViewInit, OnDestroy {
       if (privacyLabel) {
         this.privacyLinkListener = (e: Event) => {
           e.preventDefault();
-          this.router.navigate(['/privacy']);
+          this.modalService.open();
         };
         privacyLabel.addEventListener('click', this.privacyLinkListener as EventListener);
       }
@@ -184,7 +186,7 @@ export class Contact implements AfterViewInit, OnDestroy {
         this.emailValid.set(false);
         this.messageValid.set(false);
         this.privacyValid.set(false);
-        setTimeout(() => this.sendSuccess.set(false), 2000);
+        setTimeout(() => this.sendSuccess.set(false), 3000);
       },
       error: () => {
         this.isSending.set(false);
